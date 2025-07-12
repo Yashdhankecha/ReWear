@@ -1,0 +1,144 @@
+import axios from 'axios';
+import toast from 'react-hot-toast';
+
+// Create axios instance
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+console.log('API Configuration:', {
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  env: import.meta.env.VITE_API_URL
+});
+
+// Request interceptor
+api.interceptors.request.use(
+  (config) => {
+    // Add auth token to requests
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Response interceptor
+api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    const message = error.response?.data?.message || 'An error occurred';
+    
+    // Handle specific error cases
+    if (error.response?.status === 401) {
+      // Unauthorized - clear token and redirect to login
+      localStorage.removeItem('token');
+      delete api.defaults.headers.common['Authorization'];
+      
+      // Only show toast if it's not a login attempt
+      if (!error.config.url.includes('/auth/login')) {
+        toast.error('Session expired. Please login again.');
+        window.location.href = '/login';
+      }
+    } else if (error.response?.status === 403) {
+      toast.error('Access denied. Insufficient permissions.');
+    } else if (error.response?.status === 429) {
+      toast.error('Too many requests. Please try again later.');
+    } else if (error.response?.status >= 500) {
+      toast.error('Server error. Please try again later.');
+    }
+    
+    return Promise.reject(error);
+  }
+);
+
+// Auth API functions
+export const authAPI = {
+  // Signup
+  signup: async (userData) => {
+    const response = await api.post('/auth/signup', userData);
+    return response.data;
+  },
+
+  // Login
+  login: async (credentials) => {
+    const response = await api.post('/auth/login', credentials);
+    return response.data;
+  },
+
+  // Verify email
+  verifyEmail: async (data) => {
+    const response = await api.post('/auth/verify-email', data);
+    return response.data;
+  },
+
+  // Resend OTP
+  resendOTP: async (email) => {
+    const response = await api.post('/auth/resend-otp', { email });
+    return response.data;
+  },
+
+  // Forgot password
+  forgotPassword: async (email) => {
+    const response = await api.post('/auth/forgot-password', { email });
+    return response.data;
+  },
+
+  // Reset password
+  resetPassword: async (data) => {
+    const response = await api.post('/auth/reset-password', data);
+    return response.data;
+  },
+
+  // Get profile
+  getProfile: async () => {
+    const response = await api.get('/auth/profile');
+    return response.data;
+  },
+
+  // Logout
+  logout: async () => {
+    const response = await api.post('/auth/logout');
+    return response.data;
+  }
+};
+
+// Utility functions
+export const setAuthToken = (token) => {
+  if (token) {
+    api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    localStorage.setItem('token', token);
+  } else {
+    delete api.defaults.headers.common['Authorization'];
+    localStorage.removeItem('token');
+  }
+};
+
+export const getAuthToken = () => {
+  return localStorage.getItem('token');
+};
+
+export const isAuthenticated = () => {
+  const token = getAuthToken();
+  if (!token) return false;
+  
+  try {
+    // Check if token is expired (basic check)
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const currentTime = Date.now() / 1000;
+    return payload.exp > currentTime;
+  } catch (error) {
+    return false;
+  }
+};
+
+export default api;
