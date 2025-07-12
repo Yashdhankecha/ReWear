@@ -210,7 +210,7 @@ const ResetPassword = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Right Side - Form */}
         <div className="w-full max-w-lg mx-auto">
           <div className="bg-dark-800/50 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-dark-700/50">
@@ -231,111 +231,111 @@ const ResetPassword = () => {
                   Enter Reset Code
                 </label>
                 <div className="grid grid-cols-6 gap-3">
-                  {formData.otp.map((digit, index) => (
-                    <input
-                      key={index}
-                      id={`reset-otp-${index}`}
-                      type="text"
-                      inputMode="numeric"
-                      pattern="\d*"
-                      maxLength="1"
-                      value={digit}
-                      onChange={(e) => handleOtpChange(index, e.target.value)}
-                      onKeyDown={(e) => handleKeyDown(index, e)}
-                      onPaste={handlePaste}
+              {formData.otp.map((digit, index) => (
+                <input
+                  key={index}
+                  id={`reset-otp-${index}`}
+                  type="text"
+                  inputMode="numeric"
+                  pattern="\d*"
+                  maxLength="1"
+                  value={digit}
+                  onChange={(e) => handleOtpChange(index, e.target.value)}
+                  onKeyDown={(e) => handleKeyDown(index, e)}
+                  onPaste={handlePaste}
                       className="w-full h-14 text-center text-xl font-bold border-2 border-dark-600 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 bg-dark-700/50 backdrop-blur-sm text-white placeholder-gray-400"
-                      autoComplete="off"
-                    />
-                  ))}
-                </div>
-              </div>
+                  autoComplete="off"
+                />
+              ))}
+            </div>
+          </div>
 
               <div>
                 <label htmlFor="newPassword" className="block text-sm font-semibold text-gray-300 mb-2">
                   New Password
                 </label>
                 <div className="relative">
-                  <input
-                    type={showPassword ? 'text' : 'password'}
-                    id="newPassword"
-                    name="newPassword"
-                    value={formData.newPassword}
-                    onChange={handleInputChange}
-                    placeholder="Enter new password"
-                    required
+              <input
+                type={showPassword ? 'text' : 'password'}
+                id="newPassword"
+                name="newPassword"
+                value={formData.newPassword}
+                onChange={handleInputChange}
+                placeholder="Enter new password"
+                required
                     className="w-full px-4 py-4 pr-12 border-2 border-dark-600 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 bg-dark-700/50 backdrop-blur-sm text-white placeholder-gray-400"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-dark-600"
-                  >
-                    {showPassword ? '👁️' : '👁️‍🗨️'}
-                  </button>
-                </div>
+              >
+                {showPassword ? '👁️' : '👁️‍🗨️'}
+              </button>
+            </div>
                 <small className="text-xs text-gray-400 mt-2 block">
-                  Must contain at least 6 characters with uppercase, lowercase, and number
-                </small>
-              </div>
+              Must contain at least 6 characters with uppercase, lowercase, and number
+            </small>
+          </div>
 
               <div>
                 <label htmlFor="confirmPassword" className="block text-sm font-semibold text-gray-300 mb-2">
                   Confirm New Password
                 </label>
                 <div className="relative">
-                  <input
-                    type={showConfirmPassword ? 'text' : 'password'}
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleInputChange}
-                    placeholder="Confirm new password"
-                    required
+              <input
+                type={showConfirmPassword ? 'text' : 'password'}
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleInputChange}
+                placeholder="Confirm new password"
+                required
                     className="w-full px-4 py-4 pr-12 border-2 border-dark-600 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 bg-dark-700/50 backdrop-blur-sm text-white placeholder-gray-400"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-dark-600"
-                  >
-                    {showConfirmPassword ? '👁️' : '👁️‍🗨️'}
-                  </button>
-                </div>
-              </div>
-
+              />
               <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full bg-blue-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-dark-600"
               >
-                {isLoading ? 'Resetting...' : 'Reset Password'}
+                {showConfirmPassword ? '👁️' : '👁️‍🗨️'}
               </button>
-            </form>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            disabled={isLoading}
+                className="w-full bg-blue-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+          >
+            {isLoading ? 'Resetting...' : 'Reset Password'}
+          </button>
+        </form>
 
             <div className="text-center mt-8 space-y-4">
               <p className="text-gray-400">
-                Didn't receive the code?{' '}
-                <button
-                  type="button"
-                  onClick={handleResendCode}
-                  disabled={resendCooldown > 0}
+            Didn't receive the code?{' '}
+            <button
+              type="button"
+              onClick={handleResendCode}
+              disabled={resendCooldown > 0}
                   className="text-primary-400 hover:text-primary-300 font-medium transition-colors hover:underline disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {resendCooldown > 0 
-                    ? `Resend in ${resendCooldown}s` 
-                    : 'Resend Code'
-                  }
-                </button>
-              </p>
+            >
+              {resendCooldown > 0 
+                ? `Resend in ${resendCooldown}s` 
+                : 'Resend Code'
+              }
+            </button>
+          </p>
               <p className="text-gray-400">
-                <button
-                  type="button"
-                  onClick={() => navigate('/forgot-password')}
+            <button
+              type="button"
+              onClick={() => navigate('/forgot-password')}
                   className="text-primary-400 hover:text-primary-300 font-medium transition-colors hover:underline"
-                >
-                  ← Back to Forgot Password
-                </button>
-              </p>
+            >
+              ← Back to Forgot Password
+            </button>
+          </p>
             </div>
           </div>
         </div>

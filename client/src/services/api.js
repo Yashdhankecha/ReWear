@@ -106,9 +106,38 @@ export const authAPI = {
     return response.data;
   },
 
+  // Update profile
+  updateProfile: async (profileData) => {
+    const response = await api.put('/profile', profileData);
+    return response.data;
+  },
+
   // Logout
   logout: async () => {
     const response = await api.post('/logout');
+    return response.data;
+  }
+};
+
+// Dashboard API functions
+export const dashboardAPI = {
+  // Get user's listed products
+  getUserListedProducts: async (page = 1, limit = 10) => {
+    const response = await axios.get(`http://localhost:5000/api/dashboard/user/listed?page=${page}&limit=${limit}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    });
+    return response.data;
+  },
+
+  // Get user's bought products
+  getUserBoughtProducts: async (page = 1, limit = 10) => {
+    const response = await axios.get(`http://localhost:5000/api/dashboard/user/bought?page=${page}&limit=${limit}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    });
     return response.data;
   }
 };

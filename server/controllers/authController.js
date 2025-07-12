@@ -664,6 +664,75 @@ const getProfile = async (req, res) => {
   }
 };
 
+// @desc    Update current user profile
+// @route   PUT /api/auth/profile
+// @access  Private
+const updateProfile = async (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Validation failed',
+        errors: errors.array()
+      });
+    }
+
+    const { name, email } = req.body;
+    const userId = req.user.id;
+
+    // Check if email is being changed and if it's already taken
+    if (email) {
+      const existingUser = await User.findOne({ email, _id: { $ne: userId } });
+      if (existingUser) {
+        return res.status(400).json({
+          success: false,
+          message: 'Email is already taken by another user'
+        });
+      }
+    }
+
+    // Update user profile
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      {
+        name: name || undefined,
+        email: email || undefined
+      },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({
+        success: false,
+        message: 'User not found'
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: 'Profile updated successfully',
+      data: {
+        user: {
+          id: updatedUser._id,
+          name: updatedUser.name,
+          email: updatedUser.email,
+          isEmailVerified: updatedUser.isEmailVerified,
+          role: updatedUser.role,
+          lastLogin: updatedUser.lastLogin,
+          createdAt: updatedUser.createdAt
+        }
+      }
+    });
+  } catch (error) {
+    console.error('Update profile error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Server error while updating profile'
+    });
+  }
+};
+
 // @desc    Logout user (client-side token removal)
 // @route   POST /api/auth/logout
 // @access  Private
@@ -690,5 +759,6 @@ module.exports = {
   forgotPassword,
   resetPassword,
   getProfile,
+  updateProfile,
   logout
 };

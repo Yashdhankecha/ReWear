@@ -1,196 +1,167 @@
-
-import { useAuth } from '../context/AuthContext';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
+import ListItemModal from './ListItem';
+
+const stats = [
+  { label: 'Total Items Listed', value: '1,247' },
+  { label: 'Swaps Completed', value: '342' },
+  { label: 'Items Awaiting Approval', value: '12' },
+  { label: 'Flagged Items', value: '3' },
+];
+
+const featuredItems = [
+  { 
+    title: 'Vintage Denim Jacket', 
+    subtitle: 'Size M • 120 points',
+    image: 'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=400&h=400&fit=crop'
+  },
+  { 
+    title: 'Summer Floral Dress', 
+    subtitle: 'Size S • 95 points',
+    image: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=400&fit=crop'
+  },
+  { 
+    title: 'Designer Sneakers', 
+    subtitle: 'Size 9 • 150 points',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop'
+  },
+  { 
+    title: 'Wool Coat', 
+    subtitle: 'Size L • 110 points',
+    image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=400&fit=crop'
+  },
+  { 
+    title: 'Silk Blouse', 
+    subtitle: 'Size M • 80 points',
+    image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=400&fit=crop'
+  },
+];
+
+const phrases = [
+  "Swap. Share. Sustain.",
+  "Fashion with Purpose.",
+  "Sustainable Style.",
+  "ReWear the Future."
+];
 
 const Dashboard = () => {
-  const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
 
-  const handleLogout = async () => {
-    try {
-      await logout();
-      toast.success('Logged out successfully');
-      navigate('/login');
-    } catch (error) {
-      toast.error('Logout failed');
+  useEffect(() => {
+    let typingSpeed = 100;
+    let pause = 1200;
+    const currentPhrase = phrases[currentPhraseIndex];
+
+    if (!isDeleting && charIndex <= currentPhrase.length) {
+      if (charIndex === currentPhrase.length) {
+        typingSpeed = pause;
+        setTimeout(() => setIsDeleting(true), pause);
+      } else {
+        setTimeout(() => {
+          setDisplayText(currentPhrase.slice(0, charIndex + 1));
+          setCharIndex(charIndex + 1);
+        }, typingSpeed);
+      }
+    } else if (isDeleting && charIndex >= 0) {
+      if (charIndex === 0) {
+        setIsDeleting(false);
+        setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
+      } else {
+        setTimeout(() => {
+          setDisplayText(currentPhrase.slice(0, charIndex - 1));
+          setCharIndex(charIndex - 1);
+        }, 50);
+      }
     }
-  };
+    // eslint-disable-next-line
+  }, [charIndex, isDeleting, currentPhraseIndex]);
 
-  const formatDate = (dateString) => {
-    if (!dateString) return 'N/A';
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-  };
+  useEffect(() => {
+    // Reset charIndex when phrase changes
+    if (!isDeleting) setCharIndex(0);
+    // eslint-disable-next-line
+  }, [currentPhraseIndex]);
 
   return (
-    <div className="min-h-screen w-screen bg-slate-900">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+    <div style={{ width: '100vw', minHeight: '100vh', overflowX: 'hidden' }}>
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
+        {/* Hero Section */}
+        <div className="flex flex-col md:flex-row items-center gap-8 py-8">
+          <div className="flex-1 text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">
+              {displayText}
+              <span className={`inline-block w-1 h-12 bg-blue-600 ml-1 ${!isDeleting ? 'animate-pulse' : 'opacity-0'}`}></span>
+            </h1>
+            <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-xl">
+              ReWear your fashion, not the planet. Join our community of conscious fashion lovers trading preloved pieces.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+                Start Swapping →
+              </button>
+              <button 
+                onClick={() => navigate('/browse')}
+                className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold px-6 py-3 rounded-lg shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-700"
+              >
+                Browse Items
+              </button>
+              <button
+                onClick={() => navigate('/list')}
+                className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold px-6 py-3 rounded-lg shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-700"
+              >
+                List an Item
+              </button>
+            </div>
+          </div>
+          <div className="flex-1 w-full flex justify-center">
+            <div className="w-full max-w-md h-80 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-slate-800 dark:to-blue-800 rounded-2xl overflow-hidden shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=400&fit=crop" 
+                alt="Sustainable Fashion" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
       </div>
       
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-      
-      <header className="relative z-10 bg-dark-800/50 backdrop-blur-xl border-b border-dark-700/50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                <span className="text-lg">♻️</span>
-              </div>
-              <h1 className="text-2xl font-bold text-white">ReWear Dashboard</h1>
-            </div>
-            <button 
-              onClick={handleLogout} 
-              className="bg-red-600/20 text-red-400 px-6 py-3 rounded-xl font-medium hover:bg-red-600/30 transition-all duration-300 border border-red-500/20"
-            >
-              Logout
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <main className="relative z-10 w-full mx-auto px-8 lg:px-12 py-12">
-        <div className="mb-12">
-          <h2 className="text-5xl font-bold text-white mb-4">
-            Welcome back, {user?.name}! 👋
+      {/* Featured Items */}
+      <div className="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+            Featured Items
           </h2>
-          <p className="text-xl text-gray-300">You have successfully logged into your ReWear account.</p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
-          {/* Profile Information */}
-          <div className="bg-dark-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-dark-700/50 hover:border-primary-500/20 transition-all duration-300">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                <span className="text-lg">👤</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white">Profile Information</h3>
-            </div>
-            <div className="space-y-4">
-              <div className="flex justify-between items-center py-3 border-b border-dark-600/50">
-                <span className="text-gray-400">Name:</span>
-                <span className="font-medium text-white">{user?.name}</span>
-              </div>
-              <div className="flex justify-between items-center py-3 border-b border-dark-600/50">
-                <span className="text-gray-400">Email:</span>
-                <span className="font-medium text-white">{user?.email}</span>
-              </div>
-              <div className="flex justify-between items-center py-3 border-b border-dark-600/50">
-                <span className="text-gray-400">Role:</span>
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                  user?.role === 'admin' ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' : 'bg-primary-500/20 text-primary-400 border border-primary-500/30'
-                }`}>
-                  {user?.role?.toUpperCase()}
-                </span>
-              </div>
-              <div className="flex justify-between items-center py-3">
-                <span className="text-gray-400">Email Verified:</span>
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                  user?.isEmailVerified ? 'bg-green-500/20 text-green-400 border border-green-500/30' : 'bg-red-500/20 text-red-400 border border-red-500/30'
-                }`}>
-                  {user?.isEmailVerified ? '✅ Verified' : '❌ Not Verified'}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Account Activity */}
-          <div className="bg-dark-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-dark-700/50 hover:border-primary-500/20 transition-all duration-300">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-xl flex items-center justify-center">
-                <span className="text-lg">📊</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white">Account Activity</h3>
-            </div>
-            <div className="space-y-4">
-              <div className="flex justify-between items-center py-3 border-b border-dark-600/50">
-                <span className="text-gray-400">Last Login:</span>
-                <span className="font-medium text-white">{formatDate(user?.lastLogin)}</span>
-              </div>
-              <div className="flex justify-between items-center py-3 border-b border-dark-600/50">
-                <span className="text-gray-400">Account Created:</span>
-                <span className="font-medium text-white">{formatDate(user?.createdAt)}</span>
-              </div>
-              <div className="flex justify-between items-center py-3">
-                <span className="text-gray-400">User ID:</span>
-                <span className="font-mono text-sm text-gray-500">{user?.id}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Actions */}
-          <div className="bg-dark-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-dark-700/50 hover:border-primary-500/20 transition-all duration-300">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center">
-                <span className="text-lg">⚡</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white">Quick Actions</h3>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <button className="flex flex-col items-center p-4 rounded-xl border border-dark-600/50 hover:bg-dark-700/50 hover:border-primary-500/30 transition-all duration-300 group">
-                <span className="text-3xl mb-2 group-hover:scale-110 transition-transform">👤</span>
-                <span className="text-sm font-medium text-gray-300 group-hover:text-white">Edit Profile</span>
-              </button>
-              <button className="flex flex-col items-center p-4 rounded-xl border border-dark-600/50 hover:bg-dark-700/50 hover:border-primary-500/30 transition-all duration-300 group">
-                <span className="text-3xl mb-2 group-hover:scale-110 transition-transform">🔒</span>
-                <span className="text-sm font-medium text-gray-300 group-hover:text-white">Change Password</span>
-              </button>
-              <button className="flex flex-col items-center p-4 rounded-xl border border-dark-600/50 hover:bg-dark-700/50 hover:border-primary-500/30 transition-all duration-300 group">
-                <span className="text-3xl mb-2 group-hover:scale-110 transition-transform">⚙️</span>
-                <span className="text-sm font-medium text-gray-300 group-hover:text-white">Settings</span>
-              </button>
-              <button className="flex flex-col items-center p-4 rounded-xl border border-dark-600/50 hover:bg-dark-700/50 hover:border-primary-500/30 transition-all duration-300 group">
-                <span className="text-3xl mb-2 group-hover:scale-110 transition-transform">📊</span>
-                <span className="text-sm font-medium text-gray-300 group-hover:text-white">Analytics</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Security Status */}
-          <div className="bg-dark-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-dark-700/50 hover:border-primary-500/20 transition-all duration-300">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center">
-                <span className="text-lg">🛡️</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white">Security Status</h3>
-            </div>
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4 p-4 rounded-xl bg-dark-700/30 border border-dark-600/30">
-                <span className="text-2xl">🔐</span>
-                <div>
-                  <h4 className="font-medium text-white">Two-Factor Authentication</h4>
-                  <p className="text-sm text-red-400">Not Enabled</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+            {featuredItems.map((item, index) => (
+              <div
+                key={item.title}
+                className="group rounded-xl bg-white dark:bg-slate-800 shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="h-32 overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="text-sm font-semibold text-slate-900 dark:text-white mb-1">
+                    {item.title}
+                  </div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">
+                    {item.subtitle}
+                  </div>
                 </div>
               </div>
-              <div className="flex items-center space-x-4 p-4 rounded-xl bg-dark-700/30 border border-dark-600/30">
-                <span className="text-2xl">📧</span>
-                <div>
-                  <h4 className="font-medium text-white">Email Verification</h4>
-                  <p className={`text-sm ${user?.isEmailVerified ? 'text-green-400' : 'text-red-400'}`}>
-                    {user?.isEmailVerified ? 'Verified' : 'Not Verified'}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4 p-4 rounded-xl bg-dark-700/30 border border-dark-600/30">
-                <span className="text-2xl">🛡️</span>
-                <div>
-                  <h4 className="font-medium text-white">Account Security</h4>
-                  <p className="text-sm text-green-400">Active</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

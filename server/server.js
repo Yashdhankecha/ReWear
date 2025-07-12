@@ -9,9 +9,9 @@ dotenv.config();
 
 // Import passport configuration
 require('./config/passport');
-
-// Import routes
+const dashboardRoutes = require('./routes/dashboardRoutes');
 const authRoutes = require('./routes/authRoutes');
+const communityRoutes = require('./routes/communityRoutes');
 
 // Import middleware
 const errorHandler = require('./middleware/errorHandler');
@@ -38,8 +38,12 @@ if (process.env.NODE_ENV === 'development') {
   console.log('🔧 Using development database (SQLite)');
 }
 
+// Register dashboard routes before error/404 handlers
+app.use('/api/dashboard', dashboardRoutes);
+
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/community', communityRoutes);
 
 // Health check route
 app.get('/api/health', (req, res) => {

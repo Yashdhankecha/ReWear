@@ -3,7 +3,8 @@ import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useEffect } from 'react';
-
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
 // Pages
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -12,6 +13,14 @@ import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import Dashboard from './pages/Dashboard';
 import GoogleCallback from './pages/GoogleCallback';
+import ListItemPage from './pages/ListItemPage';
+import MyListings from './pages/MyListings';
+import BrowseItems from './pages/BrowseItems';
+import Profile from './pages/Profile';
+import About from './pages/About';
+import Community from './pages/Community';
+import ProductDetail from './pages/ProductDetail';
+import Notifications from './pages/Notifications';
 
 // Styles - Now using Tailwind CSS via CDN
 
@@ -32,6 +41,7 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="App">
+          <Navbar />
           <Routes>
             {/* Public routes */}
             <Route path="/login" element={<Login />} />
@@ -40,6 +50,10 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/auth/google-callback" element={<GoogleCallback />} />
+            <Route path="/browse" element={<BrowseItems />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/community" element={<Community />} />
 
             {/* Protected routes */}
             <Route
@@ -47,6 +61,34 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/list"
+              element={<ListItemPage />}
+            />
+            <Route
+              path="/my-listings"
+              element={
+                <ProtectedRoute>
+                  <MyListings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/notifications"
+              element={
+                <ProtectedRoute>
+                  <Notifications />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
                 </ProtectedRoute>
               }
             />
@@ -83,6 +125,8 @@ function App() {
               },
             }}
           />
+
+          <Footer />
         </div>
       </Router>
     </AuthProvider>

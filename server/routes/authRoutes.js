@@ -10,6 +10,7 @@ const {
   forgotPassword,
   resetPassword,
   getProfile,
+  updateProfile,
   logout
 } = require('../controllers/authController');
 const { protect } = require('../middleware/auth');
@@ -83,6 +84,22 @@ const resetPasswordValidation = [
     .withMessage('Password must be at least 6 characters long')
     .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/)
     .withMessage('Password must contain at least one uppercase letter, one lowercase letter, and one number')
+];
+
+const updateProfileValidation = [
+  body('name')
+    .optional()
+    .trim()
+    .isLength({ min: 2, max: 50 })
+    .withMessage('Name must be between 2 and 50 characters')
+    .matches(/^[a-zA-Z\s\-'\.]+$/)
+    .withMessage('Name can only contain letters, spaces, hyphens, apostrophes, and periods'),
+  
+  body('email')
+    .optional()
+    .isEmail()
+    .normalizeEmail()
+    .withMessage('Please provide a valid email address')
 ];
 
 // Public routes
@@ -166,6 +183,7 @@ router.get('/google/callback',
 
 // Protected routes
 router.get('/profile', protect, getProfile);
+router.put('/profile', protect, updateProfileValidation, updateProfile);
 router.post('/logout', protect, logout);
 
 // DEV ONLY: Insert dummy users and list all users

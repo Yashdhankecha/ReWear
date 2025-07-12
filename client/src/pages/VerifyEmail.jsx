@@ -170,7 +170,7 @@ const VerifyEmail = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Right Side - Form */}
         <div className="w-full max-w-lg mx-auto">
           <div className="bg-dark-800/50 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-dark-700/50">
@@ -191,58 +191,58 @@ const VerifyEmail = () => {
                   Enter Verification Code
                 </label>
                 <div className="grid grid-cols-6 gap-3">
-                  {otp.map((digit, index) => (
-                    <input
-                      key={index}
-                      id={`otp-${index}`}
-                      type="text"
-                      inputMode="numeric"
-                      pattern="\d*"
-                      maxLength="1"
-                      value={digit}
-                      onChange={(e) => handleOtpChange(index, e.target.value)}
-                      onKeyDown={(e) => handleKeyDown(index, e)}
-                      onPaste={handlePaste}
+              {otp.map((digit, index) => (
+                <input
+                  key={index}
+                  id={`otp-${index}`}
+                  type="text"
+                  inputMode="numeric"
+                  pattern="\d*"
+                  maxLength="1"
+                  value={digit}
+                  onChange={(e) => handleOtpChange(index, e.target.value)}
+                  onKeyDown={(e) => handleKeyDown(index, e)}
+                  onPaste={handlePaste}
                       className="w-full h-14 text-center text-xl font-bold border-2 border-dark-600 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 bg-dark-700/50 backdrop-blur-sm text-white placeholder-gray-400"
-                      autoComplete="off"
-                    />
-                  ))}
-                </div>
-              </div>
+                  autoComplete="off"
+                />
+              ))}
+            </div>
+          </div>
 
-              <button
-                type="submit"
-                disabled={isLoading}
+          <button
+            type="submit"
+            disabled={isLoading}
                 className="w-full bg-blue-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
-              >
-                {isLoading ? 'Verifying...' : 'Verify Email'}
-              </button>
-            </form>
+          >
+            {isLoading ? 'Verifying...' : 'Verify Email'}
+          </button>
+        </form>
 
             <div className="text-center mt-8 space-y-4">
               <p className="text-gray-400">
-                Didn't receive the code?{' '}
-                <button
-                  type="button"
-                  onClick={handleResendOTP}
-                  disabled={resendCooldown > 0}
+            Didn't receive the code?{' '}
+            <button
+              type="button"
+              onClick={handleResendOTP}
+              disabled={resendCooldown > 0}
                   className="text-primary-400 hover:text-primary-300 font-medium transition-colors hover:underline disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {resendCooldown > 0
-                    ? `Resend in ${resendCooldown}s`
-                    : 'Resend Code'
-                  }
-                </button>
-              </p>
+            >
+              {resendCooldown > 0
+                ? `Resend in ${resendCooldown}s`
+                : 'Resend Code'
+              }
+            </button>
+          </p>
               <p className="text-gray-400">
-                <button
-                  type="button"
-                  onClick={() => navigate('/signup')}
+            <button
+              type="button"
+              onClick={() => navigate('/signup')}
                   className="text-primary-400 hover:text-primary-300 font-medium transition-colors hover:underline"
-                >
-                  ← Back to Sign Up
-                </button>
-              </p>
+            >
+              ← Back to Sign Up
+            </button>
+          </p>
             </div>
           </div>
         </div>
