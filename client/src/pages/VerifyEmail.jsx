@@ -127,70 +127,124 @@ const VerifyEmail = () => {
   }
 
   return (
-    <div className="auth-container fade-in">
-      <div className="auth-card">
-        <div className="auth-header">
-          <h1>Verify Your Email</h1>
-          <p>We've sent a 6-digit verification code to</p>
-          <strong>{email}</strong>
-        </div>
-
-        <form onSubmit={handleSubmit} className="auth-form">
-          <div className="otp-container">
-            <label>Enter Verification Code</label>
-            <div className="otp-inputs">
-              {otp.map((digit, index) => (
-                <input
-                  key={index}
-                  id={`otp-${index}`}
-                  type="text"
-                  inputMode="numeric"
-                  pattern="\d*"
-                  maxLength="1"
-                  value={digit}
-                  onChange={(e) => handleOtpChange(index, e.target.value)}
-                  onKeyDown={(e) => handleKeyDown(index, e)}
-                  onPaste={handlePaste}
-                  className="otp-input"
-                  autoComplete="off"
-                />
-              ))}
+    <div className="min-h-screen w-screen bg-slate-900 flex items-center justify-center p-8 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary-400/10 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
+      </div>
+      
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+      
+      <div className="w-full mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10 px-8">
+        {/* Left Side - Branding */}
+        <div className="hidden lg:block space-y-8">
+          <div className="space-y-6">
+            <div className="w-24 h-24 bg-blue-600 rounded-3xl flex items-center justify-center shadow-2xl animate-glow">
+              <span className="text-4xl">📧</span>
+            </div>
+            <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
+              Verify Your<br />
+              <span className="text-white">Email Address</span><br />
+              Securely
+            </h1>
+            <p className="text-xl text-gray-300 leading-relaxed max-w-md">
+              We've sent a 6-digit verification code to your email address. 
+              Enter it below to complete your account setup.
+            </p>
+            <div className="grid grid-cols-1 gap-4 text-gray-400">
+              <div className="flex items-center space-x-3">
+                <span className="text-2xl">📱</span>
+                <span>6-digit verification code</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <span className="text-2xl">🔒</span>
+                <span>Secure email verification</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <span className="text-2xl">⚡</span>
+                <span>Quick account activation</span>
+              </div>
             </div>
           </div>
+        </div>
+        
+        {/* Right Side - Form */}
+        <div className="w-full max-w-lg mx-auto">
+          <div className="bg-dark-800/50 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-dark-700/50">
+            <div className="text-center mb-8">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-2xl">📧</span>
+                </div>
+                <h2 className="text-3xl font-bold text-white mb-2">Verify Your Email</h2>
+                <p className="text-gray-400 font-medium">We've sent a 6-digit verification code to</p>
+                <p className="text-primary-400 font-semibold mt-1">{email}</p>
+              </div>
+            </div>
 
-          <button
-            type="submit"
-            className="auth-button"
-            disabled={isLoading}
-          >
-            {isLoading ? 'Verifying...' : 'Verify Email'}
-          </button>
-        </form>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-sm font-semibold text-gray-300 mb-3">
+                  Enter Verification Code
+                </label>
+                <div className="grid grid-cols-6 gap-3">
+                  {otp.map((digit, index) => (
+                    <input
+                      key={index}
+                      id={`otp-${index}`}
+                      type="text"
+                      inputMode="numeric"
+                      pattern="\d*"
+                      maxLength="1"
+                      value={digit}
+                      onChange={(e) => handleOtpChange(index, e.target.value)}
+                      onKeyDown={(e) => handleKeyDown(index, e)}
+                      onPaste={handlePaste}
+                      className="w-full h-14 text-center text-xl font-bold border-2 border-dark-600 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 bg-dark-700/50 backdrop-blur-sm text-white placeholder-gray-400"
+                      autoComplete="off"
+                    />
+                  ))}
+                </div>
+              </div>
 
-        <div className="auth-footer">
-          <p>
-            Didn't receive the code?{' '}
-            <button
-              type="button"
-              className="resend-button"
-              onClick={handleResendOTP}
-              disabled={resendCooldown > 0}
-            >
-              {resendCooldown > 0
-                ? `Resend in ${resendCooldown}s`
-                : 'Resend Code'
-              }
-            </button>
-          </p>
-          <p>
-            <button
-              type="button"
-              className="back-button"
-              onClick={() => navigate('/signup')}
-            >
-              ← Back to Sign Up
-            </button>
-          </p>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full bg-blue-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+              >
+                {isLoading ? 'Verifying...' : 'Verify Email'}
+              </button>
+            </form>
+
+            <div className="text-center mt-8 space-y-4">
+              <p className="text-gray-400">
+                Didn't receive the code?{' '}
+                <button
+                  type="button"
+                  onClick={handleResendOTP}
+                  disabled={resendCooldown > 0}
+                  className="text-primary-400 hover:text-primary-300 font-medium transition-colors hover:underline disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {resendCooldown > 0
+                    ? `Resend in ${resendCooldown}s`
+                    : 'Resend Code'
+                  }
+                </button>
+              </p>
+              <p className="text-gray-400">
+                <button
+                  type="button"
+                  onClick={() => navigate('/signup')}
+                  className="text-primary-400 hover:text-primary-300 font-medium transition-colors hover:underline"
+                >
+                  ← Back to Sign Up
+                </button>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

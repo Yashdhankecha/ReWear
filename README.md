@@ -1,6 +1,6 @@
-# Odoo Authentication System
+# ReWear
 
-A modern, full-stack authentication system built with React, Node.js, and MongoDB, featuring Google OAuth integration, JWT authentication, and email verification.
+A sustainable fashion platform that promotes clothing reuse and reduces textile waste through a modern web application.
 
 ## 🚀 Features
 
@@ -46,8 +46,8 @@ A modern, full-stack authentication system built with React, Node.js, and MongoD
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/odoo-auth.git
-cd odoo-auth
+git clone https://github.com/yourusername/ReWear.git
+cd ReWear
 ```
 
 ### 2. Install Dependencies
@@ -169,7 +169,7 @@ npm start
 
 ### Project Structure
 ```
-odoo-auth/
+ReWear/
 ├── client/                 # React frontend
 │   ├── src/
 │   │   ├── components/    # Reusable components
@@ -267,7 +267,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/yourusername/odoo-auth/issues) page
+1. Check the [Issues](https://github.com/yourusername/ReWear/issues) page
 2. Create a new issue with detailed information
 3. Include your environment details and error messages
 

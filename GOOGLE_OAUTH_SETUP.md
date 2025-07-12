@@ -1,6 +1,6 @@
 # Google OAuth Setup Guide
 
-This guide will help you set up Google OAuth authentication for your Odoo application.
+This guide will help you set up Google OAuth authentication for your ReWear application.
 
 ## Prerequisites
 

@@ -23,4 +23,4 @@ GOOGLE_CLIENT_SECRET=your-google-client-secret
 GOOGLE_CALLBACK_URL=http://localhost:5000/api/auth/google/callback
 
 # Client URL (for OAuth redirects)
-CLIENT_URL=http://localhost:3000 
+CLIENT_URL=http://localhost:5174 

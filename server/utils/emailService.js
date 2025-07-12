@@ -3,12 +3,12 @@ const nodemailer = require('nodemailer');
 class EmailService {
   constructor() {
     this.transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
       }
     });
   }
@@ -21,7 +21,7 @@ class EmailService {
     const html = this.getOTPEmailTemplate(otp, type);
 
     const mailOptions = {
-      from: `"MERN Auth App" <${process.env.EMAIL_FROM}>`,
+      from: `"ReWear" <${process.env.SMTP_USER}>`,
       to: email,
       subject: subject,
       html: html
@@ -52,7 +52,7 @@ class EmailService {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>${title}</title>
+        <title>ReWear - ${title}</title>
         <style>
           body {
             font-family: Arial, sans-serif;
@@ -119,7 +119,7 @@ class EmailService {
           <p>If you didn't request this ${type === 'verification' ? 'verification' : 'password reset'}, please ignore this email.</p>
           
           <div class="footer">
-            <p>Best regards,<br>MERN Auth App Team</p>
+            <p>Best regards,<br>ReWear Team</p>
           </div>
         </div>
       </body>
@@ -129,9 +129,9 @@ class EmailService {
 
   async sendWelcomeEmail(email, name) {
     const mailOptions = {
-      from: `"MERN Auth App" <${process.env.EMAIL_FROM}>`,
+      from: `"ReWear" <${process.env.SMTP_USER}>`,
       to: email,
-      subject: 'Welcome to MERN Auth App!',
+      subject: 'Welcome to ReWear!',
       html: this.getWelcomeEmailTemplate(name)
     };
 
@@ -153,7 +153,7 @@ class EmailService {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome to MERN Auth App</title>
+        <title>Welcome to ReWear</title>
         <style>
           body {
             font-family: Arial, sans-serif;
@@ -192,7 +192,7 @@ class EmailService {
       <body>
         <div class="container">
           <div class="header">
-            <h1>Welcome to MERN Auth App!</h1>
+            <h1>Welcome to ReWear!</h1>
           </div>
           
           <div class="welcome-box">
@@ -212,7 +212,7 @@ class EmailService {
           <p>If you have any questions or need assistance, feel free to contact our support team.</p>
           
           <div class="footer">
-            <p>Best regards,<br>MERN Auth App Team</p>
+            <p>Best regards,<br>ReWear Team</p>
           </div>
         </div>
       </body>

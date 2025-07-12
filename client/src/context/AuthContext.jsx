@@ -1,6 +1,9 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
 import api from '../services/api';
 
+// Debug: Log the API configuration
+console.log('AuthContext - API baseURL:', api.defaults.baseURL);
+
 // Initial state
 const initialState = {
   user: null,
@@ -99,7 +102,7 @@ export const AuthProvider = ({ children }) => {
         try {
           dispatch({ type: AUTH_ACTIONS.SET_LOADING, payload: true });
           api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-          const response = await api.get('auth/profile');
+          const response = await api.get('/profile');
 
           dispatch({
             type: AUTH_ACTIONS.LOGIN_SUCCESS,
@@ -129,7 +132,10 @@ export const AuthProvider = ({ children }) => {
       dispatch({ type: AUTH_ACTIONS.SET_LOADING, payload: true });
       dispatch({ type: AUTH_ACTIONS.CLEAR_ERROR });
 
-      const response = await api.post('/auth/login', {
+      const fullUrl = api.defaults.baseURL + '/login';
+      console.log('AuthContext - Making request to:', fullUrl);
+      console.log('AuthContext - API defaults:', api.defaults);
+      const response = await api.post('/login', {
         email,
         password
       });
@@ -165,7 +171,7 @@ export const AuthProvider = ({ children }) => {
       dispatch({ type: AUTH_ACTIONS.SET_LOADING, payload: true });
       dispatch({ type: AUTH_ACTIONS.CLEAR_ERROR });
 
-      const response = await api.post('/auth/signup', {
+      const response = await api.post('/signup', {
         name,
         email,
         password
@@ -193,7 +199,7 @@ export const AuthProvider = ({ children }) => {
       dispatch({ type: AUTH_ACTIONS.SET_LOADING, payload: true });
       dispatch({ type: AUTH_ACTIONS.CLEAR_ERROR });
 
-      const response = await api.post('/auth/verify-email', {
+      const response = await api.post('/verify-email', {
         email,
         otp
       });
@@ -221,7 +227,7 @@ export const AuthProvider = ({ children }) => {
     try {
       dispatch({ type: AUTH_ACTIONS.CLEAR_ERROR });
 
-      const response = await api.post('/auth/resend-otp', { email });
+      const response = await api.post('/resend-otp', { email });
       return { success: true, data: response.data };
     } catch (error) {
       const errorMessage = error.response?.data?.message || 'Failed to resend OTP';
@@ -239,7 +245,7 @@ export const AuthProvider = ({ children }) => {
       dispatch({ type: AUTH_ACTIONS.SET_LOADING, payload: true });
       dispatch({ type: AUTH_ACTIONS.CLEAR_ERROR });
 
-      const response = await api.post('/auth/forgot-password', { email });
+      const response = await api.post('/forgot-password', { email });
       
       dispatch({ type: AUTH_ACTIONS.SET_LOADING, payload: false });
       return { success: true, data: response.data };
@@ -259,7 +265,7 @@ export const AuthProvider = ({ children }) => {
       dispatch({ type: AUTH_ACTIONS.SET_LOADING, payload: true });
       dispatch({ type: AUTH_ACTIONS.CLEAR_ERROR });
 
-      const response = await api.post('/auth/reset-password', {
+      const response = await api.post('/reset-password', {
         email,
         otp,
         newPassword
@@ -280,7 +286,7 @@ export const AuthProvider = ({ children }) => {
   // Logout function
   const logout = async () => {
     try {
-      await api.post('/auth/logout');
+      await api.post('/logout');
     } catch (error) {
       console.error('Logout error:', error);
     } finally {

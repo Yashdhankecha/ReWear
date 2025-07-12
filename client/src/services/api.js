@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 // Create axios instance
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: 'http://localhost:5000/api/auth',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
@@ -11,8 +11,9 @@ const api = axios.create({
 });
 
 console.log('API Configuration:', {
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
-  env: import.meta.env.VITE_API_URL
+  baseURL: 'http://localhost:5000/api/auth',
+  env: import.meta.env.VITE_API_URL,
+  actualBaseURL: api.defaults.baseURL
 });
 
 // Request interceptor
@@ -45,7 +46,7 @@ api.interceptors.response.use(
       delete api.defaults.headers.common['Authorization'];
       
       // Only show toast if it's not a login attempt
-      if (!error.config.url.includes('/auth/login')) {
+      if (!error.config.url.includes('/login')) {
         toast.error('Session expired. Please login again.');
         window.location.href = '/login';
       }
@@ -65,49 +66,49 @@ api.interceptors.response.use(
 export const authAPI = {
   // Signup
   signup: async (userData) => {
-    const response = await api.post('/auth/signup', userData);
+    const response = await api.post('/signup', userData);
     return response.data;
   },
 
   // Login
   login: async (credentials) => {
-    const response = await api.post('/auth/login', credentials);
+    const response = await api.post('/login', credentials);
     return response.data;
   },
 
   // Verify email
   verifyEmail: async (data) => {
-    const response = await api.post('/auth/verify-email', data);
+    const response = await api.post('/verify-email', data);
     return response.data;
   },
 
   // Resend OTP
   resendOTP: async (email) => {
-    const response = await api.post('/auth/resend-otp', { email });
+    const response = await api.post('/resend-otp', { email });
     return response.data;
   },
 
   // Forgot password
   forgotPassword: async (email) => {
-    const response = await api.post('/auth/forgot-password', { email });
+    const response = await api.post('/forgot-password', { email });
     return response.data;
   },
 
   // Reset password
   resetPassword: async (data) => {
-    const response = await api.post('/auth/reset-password', data);
+    const response = await api.post('/reset-password', data);
     return response.data;
   },
 
   // Get profile
   getProfile: async () => {
-    const response = await api.get('/auth/profile');
+    const response = await api.get('/profile');
     return response.data;
   },
 
   // Logout
   logout: async () => {
-    const response = await api.post('/auth/logout');
+    const response = await api.post('/logout');
     return response.data;
   }
 };

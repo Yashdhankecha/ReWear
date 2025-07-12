@@ -1,4 +1,4 @@
-# Contributing to Odoo Authentication System
+# Contributing to ReWear
 
 Thank you for your interest in contributing to our project! This document provides guidelines and information for contributors.
 
@@ -12,8 +12,8 @@ Thank you for your interest in contributing to our project! This document provid
 ### 2. Set Up Development Environment
 ```bash
 # Clone your fork
-git clone https://github.com/yourusername/odoo-auth.git
-cd odoo-auth
+git clone https://github.com/yourusername/ReWear.git
+cd ReWear
 
 # Install dependencies
 cd server && npm install
@@ -223,4 +223,4 @@ Contributors will be recognized in:
 - Release notes
 - GitHub contributors page
 
-Thank you for contributing to Odoo Authentication System! 🎉 
+Thank you for contributing to ReWear! 🎉 

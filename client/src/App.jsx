@@ -13,8 +13,7 @@ import ResetPassword from './pages/ResetPassword';
 import Dashboard from './pages/Dashboard';
 import GoogleCallback from './pages/GoogleCallback';
 
-// Styles
-import './App.css';
+// Styles - Now using Tailwind CSS via CDN
 
 function App() {
   // Test API connection on app load
