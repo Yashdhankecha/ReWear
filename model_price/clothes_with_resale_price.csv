@@ -1,0 +1,1001 @@
+Brand,Category,Color,Size,Material,Price,Bought_Date,Usage_Level,Original_Price,Resale_Price
+New Balance,Dress,White,XS,Nylon,182,2023-05-26,3,73.98,40.46
+New Balance,Jeans,Black,XS,Silk,57,2022-09-08,1,41.72,26.52
+Under Armour,Dress,Red,M,Wool,127,2023-10-11,4,119.51,60.31
+Nike,Shoes,Green,M,Cotton,77,2023-02-07,0,55.26,41.85
+Adidas,Sweater,White,M,Nylon,113,2023-07-31,4,84.81,41.13
+Reebok,Jacket,Red,XL,Nylon,19,2020-05-25,1,103.21,41.96
+Puma,Jacket,Red,XXL,Polyester,31,2023-07-11,3,108.98,60.97
+Adidas,Dress,Red,XS,Denim,46,2020-11-20,4,41.24,8.89
+Reebok,Dress,Black,S,Wool,97,2020-10-03,3,108.7,30.7
+Adidas,Jeans,Yellow,L,Wool,80,2022-12-11,3,109.37,54.83
+Nike,Jacket,White,XL,Silk,98,2022-11-25,4,31.21,13.01
+Puma,Jacket,White,XL,Silk,150,2022-10-05,2,97.96,55.15
+Under Armour,Jacket,White,S,Nylon,68,2020-05-17,3,21.4,5.23
+Under Armour,T-shirt,Blue,XL,Polyester,49,2022-11-19,3,96.51,47.81
+New Balance,Jacket,Green,S,Nylon,97,2019-12-09,4,78.71,9.49
+Under Armour,Jacket,Green,XXL,Silk,184,2021-10-19,1,50.34,27.53
+New Balance,Jeans,Red,S,Cotton,98,2023-07-10,2,34.85,22.28
+Reebok,Shoes,Blue,XS,Polyester,91,2022-05-09,5,67.38,19.01
+Adidas,Jeans,Yellow,XL,Denim,175,2021-12-27,3,99.07,40.2
+Puma,Shoes,Blue,XL,Wool,35,2022-03-02,3,91.42,38.72
+Puma,Sweater,Blue,L,Cotton,87,2020-02-21,3,115.4,25.48
+New Balance,Jeans,Green,S,Cotton,82,2019-10-06,3,98.68,18.06
+Reebok,Jacket,Black,L,Denim,19,2019-12-29,3,84.56,17.42
+Puma,Jacket,Red,XXL,Wool,158,2020-10-10,3,84.77,24.11
+Puma,Jacket,Black,L,Denim,125,2020-08-13,1,33.92,14.53
+Adidas,Jeans,White,XXL,Nylon,89,2020-10-15,0,23.44,12.32
+Adidas,Dress,Green,L,Polyester,185,2022-07-03,1,73.37,45.29
+New Balance,Shoes,Blue,M,Cotton,92,2023-12-23,3,34.86,21.08
+Adidas,T-shirt,Red,XS,Denim,109,2021-11-06,0,25.46,16.09
+Reebok,Sweater,Yellow,S,Denim,187,2023-05-21,3,74.96,40.89
+New Balance,Dress,Yellow,XL,Nylon,39,2021-12-12,5,35.29,8.53
+Reebok,T-shirt,Blue,M,Wool,157,2023-08-22,3,53.02,30.27
+Reebok,Jeans,Black,M,Nylon,157,2020-04-16,4,114.52,17.85
+Puma,Shoes,Black,M,Cotton,152,2022-06-28,4,20.73,7.79
+Under Armour,Sweater,Red,XL,Polyester,177,2022-04-08,1,74.09,43.99
+Puma,Sweater,White,M,Polyester,42,2023-04-02,0,29.36,22.67
+Adidas,Jeans,Green,M,Wool,19,2020-10-02,3,64.52,18.21
+Under Armour,Shoes,Black,XL,Nylon,195,2020-08-22,4,61.95,11.83
+Nike,Dress,Yellow,XS,Silk,137,2019-07-19,5,27.56,1.0
+Under Armour,T-shirt,Yellow,XXL,Polyester,42,2020-09-20,4,28.69,5.71
+Adidas,Jacket,Yellow,M,Silk,41,2024-01-11,4,74.39,39.42
+Adidas,Shoes,White,S,Nylon,161,2022-01-04,3,100.19,40.87
+Adidas,Jacket,Black,XS,Nylon,173,2024-05-06,2,66.87,48.26
+New Balance,Shoes,Blue,XL,Silk,124,2023-03-02,3,31.37,16.42
+Adidas,T-shirt,Black,XS,Wool,193,2021-03-20,5,114.6,19.31
+Nike,Jacket,Black,XS,Silk,38,2023-08-22,5,93.71,38.51
+New Balance,Dress,Red,L,Cotton,44,2021-02-02,1,112.91,53.73
+Under Armour,Shoes,Green,XL,Silk,138,2024-01-16,4,82.88,44.03
+Nike,Jeans,White,XS,Silk,138,2020-12-27,2,38.78,14.96
+Puma,Shoes,Black,XL,Wool,174,2024-02-16,3,109.45,67.83
+Under Armour,Jacket,Black,XXL,Cotton,63,2020-10-29,2,83.95,31.03
+Puma,Jeans,Green,M,Nylon,143,2021-05-28,2,23.57,10.07
+Puma,Shoes,Yellow,XL,Cotton,48,2023-02-24,5,53.67,19.42
+New Balance,Jacket,White,XS,Silk,27,2020-06-24,4,39.4,6.89
+Puma,Jacket,Green,XL,Denim,89,2023-01-25,4,42.41,18.39
+New Balance,Sweater,Black,L,Nylon,142,2021-06-04,4,104.34,28.1
+Adidas,Jacket,Blue,XXL,Wool,115,2023-06-09,4,119.34,56.17
+Under Armour,Sweater,Red,L,Nylon,52,2022-04-16,5,119.82,33.06
+Reebok,T-shirt,Red,L,Wool,196,2023-08-01,2,77.02,49.69
+Under Armour,Jacket,Green,XXL,Silk,41,2024-03-14,5,102.67,47.96
+Adidas,Shoes,Green,XXL,Cotton,130,2019-12-20,4,92.29,11.4
+Under Armour,Jacket,Yellow,XXL,Cotton,11,2022-09-08,3,55.74,26.51
+New Balance,Jacket,Red,XL,Cotton,75,2022-06-08,2,85.39,45.29
+Adidas,Sweater,Green,XS,Denim,179,2023-05-17,4,83.91,38.97
+Under Armour,Jacket,White,M,Cotton,67,2024-01-27,2,64.94,45.08
+Under Armour,Dress,Black,S,Cotton,45,2020-12-26,4,113.65,25.63
+New Balance,T-shirt,Black,M,Polyester,112,2020-05-29,3,117.01,28.98
+Puma,Jeans,Blue,XXL,Silk,129,2020-04-11,1,106.46,42.0
+Nike,Shoes,White,L,Cotton,21,2021-04-23,4,108.15,27.88
+Under Armour,Jeans,Blue,XXL,Denim,184,2024-07-06,4,109.8,63.5
+Reebok,Sweater,White,XS,Cotton,92,2024-05-05,1,86.88,69.62
+Nike,Shoes,Green,XXL,Wool,101,2021-09-01,0,74.46,45.7
+Reebok,T-shirt,Yellow,XXL,Silk,138,2023-07-06,2,90.8,57.94
+New Balance,T-shirt,Yellow,XL,Wool,152,2020-10-28,4,49.13,10.28
+Under Armour,Jeans,Yellow,XL,Cotton,109,2022-08-25,5,50.36,15.7
+Adidas,Sweater,White,XS,Silk,63,2022-07-31,3,80.33,37.35
+New Balance,Dress,Yellow,XS,Silk,150,2022-05-26,4,37.19,13.64
+Under Armour,T-shirt,Red,XXL,Silk,131,2021-05-14,3,46.05,15.82
+Puma,Shoes,White,L,Nylon,180,2021-03-24,3,26.94,8.88
+Adidas,Jeans,White,L,Polyester,94,2023-03-09,1,114.49,78.48
+Reebok,Dress,Yellow,XS,Polyester,78,2021-03-05,4,94.71,23.15
+Under Armour,Dress,Blue,L,Cotton,16,2022-07-31,3,67.0,31.15
+New Balance,Dress,White,XXL,Polyester,57,2019-12-29,4,49.02,6.18
+New Balance,Shoes,Blue,S,Silk,137,2021-07-14,2,49.2,21.66
+Under Armour,Jacket,White,XXL,Nylon,141,2020-04-05,2,90.6,28.35
+Adidas,Dress,Red,XL,Polyester,110,2019-09-05,3,51.91,9.06
+Under Armour,Dress,Green,L,Polyester,190,2020-01-25,3,60.69,12.95
+Nike,Shoes,Black,L,Nylon,88,2022-05-02,4,85.14,30.67
+Reebok,Jeans,Blue,L,Wool,153,2022-03-12,1,31.35,18.38
+Under Armour,Sweater,Blue,XS,Cotton,158,2022-01-10,2,38.59,18.89
+Under Armour,Jacket,White,XXL,Silk,196,2022-09-10,5,69.14,21.86
+Adidas,Jeans,Red,XXL,Denim,33,2024-01-01,2,22.8,15.67
+Puma,Shoes,Blue,S,Nylon,151,2019-10-19,5,117.58,3.12
+New Balance,Jeans,Black,XXL,Wool,127,2023-04-14,0,44.34,34.38
+Reebok,Dress,Red,L,Denim,95,2019-08-02,4,44.23,3.77
+Nike,Jacket,Yellow,S,Cotton,58,2019-10-19,2,45.85,12.22
+New Balance,Sweater,Yellow,S,Wool,59,2019-09-29,2,118.45,30.93
+Nike,Sweater,Yellow,XS,Cotton,79,2020-04-06,3,93.48,21.79
+Adidas,Jeans,Black,L,Polyester,179,2022-09-30,4,68.29,27.43
+Nike,Jacket,Green,S,Nylon,173,2021-07-24,3,52.0,18.88
+Puma,Jeans,Blue,L,Cotton,105,2019-09-30,4,97.46,9.88
+Under Armour,Shoes,Black,L,Nylon,104,2021-09-19,5,75.8,16.57
+Reebok,Jeans,Green,XXL,Nylon,10,2022-02-07,5,52.64,13.54
+New Balance,Sweater,Red,M,Denim,123,2024-07-02,2,113.27,83.51
+Under Armour,Sweater,Black,XL,Wool,188,2021-10-11,5,87.96,19.76
+Adidas,Jeans,Red,L,Silk,46,2022-02-07,3,46.0,19.19
+Under Armour,Sweater,Green,XXL,Wool,172,2023-08-02,3,113.05,63.93
+Puma,Shoes,Black,XS,Denim,58,2024-03-06,0,94.75,81.95
+Nike,Sweater,Blue,XXL,Wool,103,2024-03-12,5,26.29,12.27
+New Balance,Dress,Green,XL,Silk,141,2024-02-27,4,118.5,64.31
+Reebok,Dress,Blue,XS,Denim,108,2022-06-12,5,84.9,24.75
+Puma,T-shirt,Red,XS,Silk,52,2019-07-23,5,72.05,1.0
+New Balance,Shoes,Blue,XS,Wool,122,2019-10-11,4,96.46,10.07
+Adidas,T-shirt,Black,M,Nylon,159,2021-11-13,5,115.21,26.92
+Reebok,Jeans,Black,XL,Polyester,137,2021-09-14,3,36.83,13.89
+Under Armour,Jeans,Yellow,XS,Silk,10,2022-01-08,1,88.36,50.28
+Adidas,Jeans,White,XXL,Polyester,148,2023-11-16,2,21.03,14.19
+Under Armour,Jeans,Blue,XXL,Nylon,124,2022-07-17,3,35.09,16.18
+Puma,Sweater,Yellow,M,Silk,53,2020-02-07,5,106.7,6.08
+New Balance,T-shirt,Green,XL,Cotton,196,2023-04-23,3,55.27,29.72
+Puma,Jeans,Red,XXL,Cotton,137,2020-12-23,3,31.69,9.65
+Adidas,Dress,Green,XS,Wool,33,2020-09-26,4,40.8,8.18
+Nike,Sweater,White,XS,Polyester,197,2021-12-16,5,44.77,10.87
+Adidas,T-shirt,Red,L,Cotton,140,2023-09-12,1,38.16,28.11
+Nike,Shoes,White,XL,Wool,131,2022-11-24,5,111.72,37.62
+Adidas,Sweater,Blue,XXL,Wool,108,2021-04-05,3,39.4,13.12
+Adidas,Jacket,Black,S,Wool,72,2019-08-30,5,106.51,1.37
+Reebok,Jeans,Blue,XS,Denim,173,2024-02-12,4,39.52,21.29
+Nike,Dress,Red,XS,Nylon,133,2022-02-16,4,41.76,14.19
+Nike,Shoes,Yellow,XS,Polyester,92,2021-10-02,2,77.95,36.03
+New Balance,T-shirt,Red,L,Silk,184,2022-09-20,3,38.59,18.48
+Puma,Sweater,Yellow,XXL,Wool,158,2024-05-26,4,25.2,14.29
+Under Armour,T-shirt,Green,L,Silk,60,2023-08-01,2,72.42,46.73
+Puma,Jacket,Black,L,Cotton,165,2020-03-18,4,81.39,12.04
+Nike,Dress,Green,XL,Nylon,24,2019-08-01,4,100.97,8.58
+Reebok,Shoes,Blue,M,Denim,51,2022-10-29,3,77.04,37.72
+Nike,Sweater,White,XL,Silk,68,2023-08-03,3,22.04,12.47
+New Balance,Shoes,Yellow,M,Wool,46,2021-10-12,3,48.46,18.65
+Under Armour,Jacket,Yellow,S,Nylon,20,2021-01-20,2,44.33,17.39
+Under Armour,Dress,Green,XL,Wool,96,2022-08-07,1,67.8,42.5
+Adidas,Jeans,Black,XXL,Nylon,53,2023-10-13,1,105.07,78.3
+Reebok,T-shirt,Black,XXL,Silk,114,2022-10-05,4,50.12,20.2
+New Balance,Jacket,Green,XXL,Silk,21,2023-10-04,2,53.02,35.14
+Puma,Shoes,Black,XXL,Cotton,12,2023-06-28,4,109.12,51.93
+Reebok,Shoes,Blue,XS,Denim,61,2022-09-02,2,40.3,22.33
+Adidas,T-shirt,White,S,Polyester,90,2021-07-25,1,98.1,51.33
+Nike,T-shirt,Red,XS,Denim,42,2020-01-29,2,87.97,25.91
+New Balance,Jacket,Yellow,M,Wool,192,2023-08-25,3,20.37,11.65
+Under Armour,Jacket,White,L,Wool,138,2022-10-15,5,116.24,37.87
+Nike,Sweater,Yellow,M,Cotton,48,2021-12-30,4,30.92,10.1
+Nike,Dress,Yellow,XL,Denim,29,2021-05-26,4,41.88,11.18
+Adidas,Shoes,Red,XXL,Nylon,184,2024-02-21,3,41.6,25.84
+Puma,Jeans,Blue,S,Denim,52,2020-04-30,4,88.44,14.13
+Nike,Dress,Green,XXL,Nylon,125,2020-04-19,5,21.65,1.66
+Under Armour,Shoes,Black,S,Silk,194,2021-09-21,2,30.37,13.95
+Under Armour,Shoes,Black,S,Silk,198,2023-11-30,3,34.81,20.83
+Puma,Jeans,Red,M,Wool,87,2020-05-03,3,39.51,9.5
+Puma,Jeans,Yellow,XL,Polyester,40,2023-01-27,4,96.07,41.72
+Adidas,Sweater,Black,L,Wool,34,2020-05-14,4,89.92,14.71
+Reebok,Dress,Green,S,Denim,135,2019-10-26,1,20.42,7.12
+Under Armour,Jacket,Black,L,Nylon,12,2020-10-04,3,37.82,10.69
+Nike,T-shirt,Yellow,S,Polyester,13,2020-07-25,3,60.46,15.92
+Adidas,Shoes,White,S,Polyester,104,2020-09-07,0,32.09,16.54
+Puma,Sweater,Green,M,Cotton,117,2023-09-15,3,65.19,37.65
+Nike,Sweater,Yellow,XS,Silk,23,2020-07-21,4,30.77,5.61
+Reebok,Sweater,Yellow,S,Polyester,122,2021-01-29,3,24.71,7.78
+New Balance,Jacket,Red,XS,Denim,50,2023-10-17,2,105.09,70.02
+Puma,Shoes,Yellow,M,Wool,82,2019-09-01,2,49.58,12.56
+Reebok,T-shirt,Green,S,Nylon,29,2022-07-31,2,76.92,41.92
+Reebok,Jeans,Red,XXL,Silk,105,2023-04-03,1,98.78,68.39
+Under Armour,Shoes,Red,XL,Denim,82,2020-12-30,0,20.3,11.1
+New Balance,Jacket,Green,S,Wool,164,2020-11-18,0,27.43,14.68
+Under Armour,Dress,Red,S,Nylon,190,2023-12-21,4,101.59,53.24
+Reebok,Dress,Green,XL,Wool,77,2023-07-14,4,26.33,12.65
+New Balance,Jacket,Black,XL,Wool,71,2022-10-02,5,73.93,23.82
+Under Armour,Sweater,Red,S,Silk,24,2020-12-08,2,112.39,42.77
+New Balance,Jacket,Black,L,Nylon,106,2021-02-22,5,90.79,14.65
+New Balance,Shoes,Red,M,Wool,14,2024-06-06,5,68.15,33.4
+Puma,T-shirt,Yellow,XXL,Polyester,149,2020-06-12,3,108.92,27.39
+Reebok,Shoes,White,L,Denim,96,2023-01-26,3,105.86,54.41
+Reebok,Jeans,Green,XXL,Denim,131,2022-10-20,2,29.16,16.54
+Adidas,Jeans,Yellow,S,Silk,119,2020-08-22,3,86.23,23.36
+Adidas,Jeans,Black,XXL,Cotton,85,2021-04-30,5,77.16,13.87
+Adidas,Shoes,Green,XS,Polyester,194,2023-04-08,1,50.95,35.34
+Adidas,Jeans,Green,XL,Nylon,26,2019-12-05,2,75.36,21.06
+Nike,Sweater,White,XXL,Denim,162,2024-07-01,3,74.82,49.16
+Adidas,Shoes,Black,XXL,Polyester,167,2020-08-20,3,109.82,29.7
+Puma,Shoes,Green,XL,Wool,159,2021-07-29,1,90.24,47.32
+Nike,Dress,Green,XS,Cotton,120,2023-09-01,5,77.48,32.05
+Puma,Dress,Red,M,Silk,35,2021-09-29,3,60.68,23.14
+Adidas,Jacket,Blue,XXL,Denim,198,2020-02-06,4,26.75,3.66
+Reebok,Jeans,Yellow,M,Cotton,131,2022-09-25,3,23.5,11.29
+Nike,Dress,Blue,S,Denim,128,2021-03-17,5,21.36,3.58
+Reebok,T-shirt,Green,S,Polyester,127,2020-07-28,3,54.07,14.28
+Puma,Jacket,White,XL,Cotton,199,2023-03-01,2,108.09,65.21
+Puma,Sweater,White,XS,Nylon,93,2020-02-18,4,20.67,2.89
+Nike,Dress,Blue,XS,Denim,171,2023-07-03,4,92.58,44.18
+New Balance,Jeans,White,L,Wool,114,2021-03-01,4,109.23,26.57
+Puma,Sweater,White,M,Wool,170,2023-01-19,2,69.29,41.02
+New Balance,T-shirt,Red,XXL,Nylon,131,2020-06-14,1,73.19,30.16
+Nike,T-shirt,Black,M,Wool,80,2022-12-23,2,91.89,53.72
+Puma,T-shirt,Black,S,Silk,41,2022-07-10,4,84.36,31.99
+Reebok,Sweater,Blue,S,Wool,23,2019-08-10,4,45.93,4.01
+Under Armour,Shoes,Red,M,Wool,81,2023-06-17,3,67.13,37.11
+Adidas,Dress,White,L,Denim,194,2023-07-11,3,71.22,39.84
+Adidas,Dress,White,S,Polyester,162,2023-08-11,4,117.63,57.4
+Under Armour,Shoes,Black,S,Cotton,89,2022-01-22,4,91.57,30.48
+Under Armour,Shoes,Blue,XXL,Wool,51,2022-12-11,3,43.14,21.63
+Nike,Jeans,Blue,L,Polyester,28,2024-06-08,4,101.14,57.72
+Puma,Shoes,Yellow,XXL,Nylon,50,2022-04-05,5,106.82,29.15
+Reebok,Sweater,Red,XXL,Denim,192,2023-07-08,2,60.45,38.61
+Adidas,Dress,Yellow,XL,Silk,21,2021-04-13,3,99.11,33.21
+Under Armour,Shoes,Blue,M,Nylon,176,2020-09-14,4,85.19,16.8
+New Balance,Jacket,Yellow,XS,Silk,121,2022-01-08,3,97.45,39.86
+New Balance,Jeans,White,XS,Polyester,103,2024-06-02,2,86.57,63.11
+Under Armour,Dress,Yellow,XS,Nylon,139,2021-09-02,4,99.51,29.25
+Under Armour,Jacket,Blue,XS,Polyester,128,2021-04-02,4,70.72,17.83
+Puma,Jeans,Black,XS,Silk,54,2020-07-16,4,82.25,14.87
+New Balance,T-shirt,Green,XL,Wool,135,2020-07-03,5,99.86,9.71
+Reebok,T-shirt,Black,M,Polyester,34,2019-09-27,3,86.42,15.6
+Under Armour,Jacket,White,S,Cotton,77,2020-06-23,3,102.24,26.02
+Reebok,T-shirt,Red,XS,Wool,13,2021-12-18,2,107.12,51.77
+Adidas,Jacket,Black,L,Wool,45,2022-05-27,3,117.12,52.37
+Nike,Jeans,White,XS,Cotton,199,2022-03-04,2,69.28,34.92
+Nike,Dress,Blue,XL,Nylon,53,2020-12-05,4,39.97,8.78
+Adidas,Jeans,Yellow,M,Cotton,42,2020-10-25,3,104.65,30.19
+Nike,Jacket,Red,L,Denim,21,2021-01-24,1,62.54,29.61
+Under Armour,Sweater,Red,XS,Wool,114,2023-10-07,5,73.0,30.92
+New Balance,Sweater,Red,XL,Nylon,148,2023-05-03,3,100.62,54.39
+Puma,Shoes,Yellow,XS,Nylon,192,2021-05-11,5,101.57,18.56
+Nike,Shoes,White,XS,Silk,175,2022-07-06,5,37.65,11.22
+Adidas,Shoes,Black,L,Cotton,135,2019-11-29,2,110.22,30.62
+Puma,Jacket,Yellow,XL,Wool,166,2021-02-17,3,23.57,7.54
+Adidas,T-shirt,White,M,Polyester,121,2021-10-13,3,97.83,37.68
+Under Armour,Jacket,Green,XL,Silk,12,2021-12-25,4,119.02,38.71
+Adidas,Shoes,Red,M,Denim,37,2024-04-11,5,102.64,48.73
+New Balance,Dress,Blue,M,Denim,161,2022-02-05,4,30.06,10.12
+Under Armour,Jeans,Yellow,M,Polyester,63,2024-04-06,5,96.1,45.5
+Nike,Jacket,Red,M,Nylon,61,2023-02-19,0,87.01,66.18
+Puma,Shoes,Yellow,XL,Wool,184,2023-12-22,3,52.15,31.52
+Reebok,Dress,White,L,Denim,158,2021-11-11,3,85.53,33.63
+New Balance,Sweater,Yellow,M,Denim,191,2020-12-08,4,52.27,11.53
+Puma,Jacket,Black,S,Wool,39,2021-04-10,0,53.79,30.89
+Reebok,T-shirt,Yellow,M,Cotton,77,2020-08-07,3,64.98,17.34
+Nike,Shoes,White,S,Wool,45,2021-11-08,3,115.76,45.42
+Adidas,Jacket,Blue,XS,Wool,49,2021-08-08,3,62.31,22.88
+New Balance,Shoes,Green,M,Cotton,147,2020-09-21,3,44.72,12.48
+New Balance,Sweater,Green,S,Cotton,83,2019-08-11,5,62.02,1.0
+Under Armour,Shoes,Yellow,M,Wool,51,2020-06-10,3,39.5,9.91
+Under Armour,Shoes,Yellow,XL,Wool,161,2021-12-20,5,105.85,25.81
+Under Armour,Dress,Yellow,L,Silk,141,2021-02-20,5,108.87,17.51
+Nike,Jacket,Green,XS,Polyester,56,2019-11-02,2,37.37,10.11
+Nike,Jacket,White,L,Silk,188,2022-08-11,1,30.56,19.19
+New Balance,Shoes,White,L,Silk,118,2024-04-11,4,81.69,45.32
+Reebok,T-shirt,Yellow,XL,Nylon,13,2023-04-20,1,52.45,36.56
+Puma,Jacket,White,XXL,Wool,41,2021-05-29,4,98.78,26.44
+Puma,Jeans,Black,S,Silk,19,2024-06-16,2,38.13,27.94
+Adidas,Jacket,Yellow,XS,Wool,148,2024-06-06,0,112.97,100.56
+Reebok,Dress,Blue,L,Silk,37,2023-08-22,1,57.26,41.85
+Nike,Jeans,Blue,M,Nylon,183,2024-01-07,3,31.88,19.41
+Nike,T-shirt,Green,XXL,Wool,177,2021-07-26,3,50.31,18.29
+Under Armour,Dress,Blue,S,Polyester,71,2020-06-08,5,90.03,8.14
+Reebok,T-shirt,Green,XS,Nylon,95,2022-01-08,3,108.91,44.55
+Reebok,Jacket,White,L,Cotton,107,2020-01-17,4,80.44,10.56
+Nike,Jacket,Blue,XXL,Polyester,54,2020-11-02,0,119.61,63.48
+Reebok,Jacket,Green,L,Denim,44,2022-05-16,4,74.77,27.22
+Under Armour,Sweater,Red,S,Denim,172,2021-08-06,5,77.5,16.01
+Under Armour,Sweater,Blue,M,Silk,98,2023-03-08,1,47.49,32.54
+New Balance,Sweater,White,L,Wool,43,2020-10-19,2,113.04,41.47
+Nike,Jeans,Yellow,XL,Wool,143,2020-03-02,2,28.07,8.52
+Nike,Sweater,Green,XL,Polyester,46,2023-08-28,4,29.78,14.67
+Reebok,Shoes,Green,XXL,Cotton,10,2023-10-02,3,87.37,50.87
+New Balance,Shoes,Black,S,Wool,44,2023-01-27,5,115.26,40.83
+Reebok,Jacket,Red,XS,Denim,136,2021-05-29,3,47.49,16.51
+New Balance,Jacket,Red,S,Cotton,191,2020-11-28,5,54.43,7.5
+New Balance,T-shirt,White,XXL,Cotton,90,2019-11-12,3,45.45,8.78
+New Balance,Dress,White,S,Nylon,146,2019-11-08,1,88.63,31.2
+Puma,Dress,Yellow,XS,Polyester,199,2019-10-29,1,118.87,41.52
+Reebok,Jeans,Green,XS,Polyester,139,2022-12-19,5,64.33,22.1
+Reebok,Dress,Red,XS,Polyester,122,2021-10-22,3,107.92,41.84
+Adidas,Jeans,Red,M,Denim,45,2021-06-15,2,80.56,34.83
+New Balance,T-shirt,Black,L,Silk,130,2024-02-16,3,85.06,52.71
+Nike,Jacket,White,S,Polyester,101,2023-11-15,3,68.79,40.88
+Reebok,Jacket,Yellow,XL,Wool,178,2022-02-08,3,117.73,49.16
+Adidas,Jeans,White,XS,Wool,126,2023-08-22,2,57.87,37.67
+Reebok,Sweater,Yellow,XS,Polyester,46,2021-07-11,5,54.37,10.84
+Nike,T-shirt,Red,XS,Wool,186,2021-01-17,2,96.37,37.73
+Puma,Shoes,Blue,L,Nylon,35,2023-01-25,2,111.02,65.91
+New Balance,Jacket,Black,XL,Silk,77,2021-10-22,4,69.07,21.25
+New Balance,Jacket,Blue,XXL,Denim,113,2019-09-02,3,74.48,12.94
+Under Armour,T-shirt,Black,XXL,Silk,45,2020-12-03,2,43.75,16.59
+Nike,Shoes,Blue,S,Cotton,124,2022-08-02,3,85.45,39.78
+Nike,Shoes,Yellow,L,Cotton,40,2020-05-08,0,116.5,56.14
+Adidas,Jeans,White,M,Denim,39,2022-10-10,1,32.64,21.03
+Adidas,Sweater,White,XXL,Silk,43,2021-10-03,2,59.41,27.48
+Adidas,Jeans,White,XXL,Polyester,156,2021-05-01,5,38.82,6.99
+Puma,T-shirt,Green,XL,Polyester,27,2020-08-27,3,31.05,8.46
+Adidas,Dress,Yellow,XL,Nylon,94,2022-05-22,4,63.21,23.12
+Nike,Jeans,Red,M,Denim,12,2022-05-26,4,97.39,35.73
+Adidas,Dress,Blue,S,Denim,79,2020-04-18,5,81.38,6.22
+Reebok,T-shirt,White,XL,Silk,111,2023-10-03,1,52.67,39.11
+Reebok,Shoes,Red,XS,Denim,150,2022-07-08,5,78.59,23.47
+Under Armour,Dress,Yellow,S,Wool,54,2020-01-22,3,46.68,9.92
+Reebok,Jacket,White,XXL,Wool,127,2021-05-14,5,41.05,7.54
+Under Armour,Dress,Blue,XXL,Cotton,76,2020-04-13,5,66.37,4.98
+Reebok,Sweater,Black,L,Denim,121,2022-01-06,2,106.86,52.2
+Puma,Sweater,Green,M,Silk,101,2024-02-09,3,111.89,69.13
+Under Armour,T-shirt,White,XS,Cotton,95,2020-04-20,0,84.59,40.35
+Reebok,Sweater,Yellow,XS,Nylon,177,2020-05-08,4,22.05,3.57
+Under Armour,Shoes,Yellow,XS,Denim,49,2019-09-29,0,111.94,47.14
+New Balance,Shoes,Green,L,Cotton,160,2019-12-03,3,62.76,12.48
+Under Armour,Dress,Yellow,XS,Nylon,168,2019-11-03,3,103.85,19.8
+Reebok,Jacket,Blue,XL,Silk,155,2023-12-10,5,116.25,51.28
+Nike,T-shirt,Blue,XS,Nylon,28,2021-12-24,5,22.16,5.43
+Adidas,Jeans,Yellow,S,Cotton,102,2020-12-07,4,75.45,16.62
+Under Armour,Jacket,Blue,XL,Denim,53,2020-05-17,5,111.77,9.43
+New Balance,Jeans,Yellow,XS,Silk,93,2022-04-22,3,85.37,37.35
+Under Armour,T-shirt,White,XXL,Cotton,187,2023-01-03,5,84.41,29.35
+Under Armour,Jeans,Yellow,L,Wool,51,2024-04-12,2,43.71,31.26
+Adidas,Jacket,Black,XS,Denim,103,2023-02-27,1,118.8,81.11
+New Balance,Sweater,Green,L,Polyester,184,2023-03-22,3,74.81,39.58
+Under Armour,T-shirt,Blue,XL,Nylon,159,2023-05-30,5,107.57,41.73
+Under Armour,Sweater,Green,XL,Nylon,99,2020-01-28,3,93.04,19.93
+Reebok,Sweater,White,XL,Denim,83,2022-10-12,5,72.93,23.7
+Nike,Sweater,Black,XL,Polyester,38,2020-09-25,5,88.34,10.63
+New Balance,Jacket,Red,L,Denim,115,2022-05-27,4,98.44,36.14
+Puma,Shoes,Yellow,S,Nylon,196,2022-10-17,2,53.47,30.28
+Puma,Dress,Blue,L,Nylon,138,2024-01-17,1,38.71,29.87
+New Balance,Sweater,Red,L,Denim,73,2021-02-11,3,105.17,33.48
+Adidas,Dress,Red,XS,Wool,26,2020-02-29,4,32.18,4.6
+New Balance,T-shirt,Blue,XS,Denim,116,2023-03-04,3,86.29,45.23
+New Balance,Jeans,White,L,Silk,174,2021-05-28,3,110.02,38.22
+Puma,Sweater,Red,M,Denim,104,2023-10-13,4,58.9,29.76
+Nike,Shoes,White,S,Nylon,34,2019-08-01,3,67.04,11.06
+Puma,Dress,White,XL,Wool,126,2021-01-27,2,60.54,23.87
+Nike,T-shirt,Yellow,XL,Denim,61,2021-12-20,5,42.57,10.38
+Nike,Jacket,White,XL,Nylon,146,2020-11-22,0,101.02,54.16
+Reebok,Shoes,White,XS,Denim,194,2019-09-16,0,34.18,14.27
+Puma,Shoes,Yellow,XS,Silk,101,2020-02-02,1,23.28,8.74
+Under Armour,T-shirt,White,S,Wool,103,2022-12-17,0,52.36,38.9
+New Balance,Jacket,Yellow,XXL,Nylon,133,2022-10-25,4,113.26,46.27
+Adidas,Jeans,Black,S,Wool,97,2023-04-21,4,60.44,27.64
+Under Armour,Jeans,Red,L,Denim,170,2020-02-18,3,119.57,26.31
+Puma,Shoes,Yellow,XS,Denim,157,2021-03-07,1,85.12,41.28
+Puma,Dress,Black,XL,Polyester,82,2021-01-20,3,65.16,20.35
+Under Armour,Jacket,Yellow,L,Nylon,97,2019-08-18,3,100.33,17.01
+Reebok,Jacket,Yellow,M,Cotton,23,2023-10-13,4,66.34,33.52
+Puma,Shoes,Blue,M,Silk,68,2024-02-24,4,46.5,25.2
+Reebok,Jeans,Yellow,XXL,Denim,91,2023-02-01,3,105.9,54.6
+New Balance,Shoes,Yellow,S,Nylon,130,2023-12-17,1,46.81,35.72
+New Balance,Shoes,Yellow,XS,Denim,126,2021-06-27,1,111.3,57.39
+Adidas,T-shirt,Yellow,XS,Nylon,193,2019-08-02,0,101.2,41.01
+Puma,T-shirt,Yellow,M,Cotton,74,2020-09-02,4,107.25,20.8
+Under Armour,Dress,Green,S,Wool,174,2023-09-03,5,30.29,12.55
+Reebok,Jeans,Green,S,Silk,35,2020-05-06,5,89.31,7.27
+Adidas,Jeans,Black,XS,Cotton,42,2022-02-26,1,22.24,12.95
+Nike,Sweater,White,XXL,Silk,180,2022-06-23,2,43.12,23.05
+Adidas,Shoes,Black,XS,Nylon,24,2020-08-13,4,21.85,4.12
+Reebok,Dress,Black,M,Silk,38,2021-08-24,5,102.6,21.7
+Puma,Jeans,Green,XXL,Wool,30,2022-11-02,4,31.17,12.8
+Puma,Sweater,White,XL,Polyester,78,2023-02-18,5,82.86,29.85
+Nike,Jacket,Black,S,Silk,32,2022-05-05,3,38.11,16.81
+Reebok,Shoes,Blue,XS,Polyester,132,2024-04-04,4,53.88,29.79
+Puma,Sweater,Red,XXL,Wool,93,2019-10-13,4,87.86,9.22
+Puma,Jeans,Blue,XXL,Cotton,145,2019-08-10,4,43.02,3.76
+Reebok,T-shirt,Red,S,Denim,71,2023-09-25,0,47.43,38.91
+Adidas,Dress,White,XXL,Silk,151,2023-04-10,3,93.94,50.19
+New Balance,Jacket,Red,XL,Silk,15,2023-02-26,3,78.45,40.99
+Under Armour,Shoes,Yellow,M,Silk,10,2023-04-23,5,45.57,17.22
+Adidas,T-shirt,Black,XL,Silk,146,2021-10-30,4,61.47,19.05
+Reebok,Dress,Red,M,Polyester,191,2023-07-01,2,101.15,64.4
+New Balance,Jacket,Yellow,S,Wool,149,2021-08-01,4,99.46,28.37
+Adidas,Jacket,Blue,L,Polyester,14,2020-10-05,5,60.63,7.46
+Puma,Shoes,Yellow,S,Nylon,177,2021-11-10,5,27.48,6.4
+New Balance,Shoes,Red,L,Nylon,102,2023-12-14,3,59.02,35.54
+New Balance,Jeans,Yellow,XXL,Cotton,183,2020-09-04,5,53.4,6.12
+Reebok,Sweater,Yellow,S,Cotton,36,2021-03-01,3,56.65,18.31
+Puma,Shoes,Blue,XXL,Silk,84,2020-07-01,0,108.63,53.96
+Puma,T-shirt,Blue,XL,Nylon,62,2020-06-15,3,87.46,22.07
+Puma,Shoes,White,M,Polyester,187,2020-06-03,4,92.7,15.67
+New Balance,Sweater,Red,S,Wool,61,2019-12-17,1,73.12,26.52
+Adidas,Jeans,White,XXL,Nylon,115,2021-03-30,3,31.8,10.53
+Under Armour,Jeans,White,XS,Nylon,28,2022-09-09,3,26.71,12.71
+Nike,T-shirt,Yellow,M,Polyester,127,2024-06-26,3,28.65,18.78
+Under Armour,Jacket,Green,XL,Nylon,44,2021-03-20,4,84.29,20.95
+Nike,Dress,Yellow,S,Denim,61,2023-07-05,1,87.53,62.83
+Reebok,Jacket,Red,XXL,Polyester,168,2024-01-26,4,101.73,54.32
+Under Armour,Sweater,Green,M,Denim,191,2019-07-29,5,80.15,1.0
+New Balance,Shoes,White,XS,Polyester,68,2021-12-16,3,100.22,40.36
+Nike,T-shirt,Yellow,M,Polyester,181,2023-12-10,4,76.8,40.02
+Puma,Jeans,Blue,S,Polyester,65,2019-12-19,1,40.48,14.71
+Reebok,Shoes,Red,XS,Nylon,28,2020-12-27,5,119.09,17.36
+Under Armour,Jacket,Yellow,S,Nylon,183,2021-08-24,5,60.85,12.87
+Adidas,T-shirt,Blue,L,Wool,97,2023-08-16,3,35.45,20.18
+Reebok,Dress,Red,M,Cotton,80,2020-03-19,4,75.66,11.21
+Puma,Shoes,Green,XXL,Denim,63,2019-10-26,2,54.16,14.54
+Puma,Jeans,Green,XS,Wool,58,2023-03-28,5,90.21,33.44
+New Balance,Jacket,Red,S,Denim,104,2024-03-03,5,62.75,29.12
+Puma,Jeans,White,L,Polyester,69,2020-08-06,2,111.32,38.58
+Nike,Sweater,Blue,S,Silk,90,2021-12-24,5,45.95,11.25
+Under Armour,Dress,Green,S,Wool,164,2019-09-17,0,26.19,10.94
+Reebok,Shoes,White,M,Silk,134,2021-11-20,4,114.41,36.11
+Under Armour,Dress,Red,M,Silk,173,2021-08-16,4,58.83,17.02
+New Balance,Dress,Yellow,L,Denim,68,2023-12-26,5,74.25,33.08
+Under Armour,Sweater,Red,XXL,Denim,187,2021-10-10,5,53.53,12.01
+Nike,Jacket,Red,M,Nylon,116,2023-05-05,4,44.06,20.32
+Nike,Shoes,Red,XS,Polyester,54,2020-03-18,4,72.38,10.71
+Puma,Jacket,Blue,XXL,Cotton,23,2019-09-05,3,21.85,3.81
+Under Armour,Jacket,Black,L,Denim,131,2021-10-03,4,37.69,11.4
+New Balance,Jacket,White,M,Cotton,80,2021-04-06,2,57.6,23.8
+Nike,Jacket,Yellow,XXL,Cotton,48,2022-03-09,3,107.43,45.71
+New Balance,T-shirt,Blue,XL,Cotton,177,2019-12-16,3,118.92,24.08
+Puma,Sweater,Red,XS,Cotton,146,2020-07-26,5,77.6,8.04
+Reebok,Dress,Yellow,S,Silk,23,2020-11-08,4,46.96,9.97
+Nike,Jacket,Blue,XS,Silk,145,2022-09-03,5,95.43,29.99
+Nike,Jacket,Green,XS,Silk,32,2020-02-20,4,61.13,8.59
+Reebok,Dress,Yellow,XXL,Polyester,89,2024-02-04,3,110.8,68.3
+Reebok,Dress,White,XS,Wool,18,2021-03-09,2,44.57,18.07
+Nike,T-shirt,Black,XL,Denim,16,2021-06-03,5,47.48,8.98
+Reebok,Sweater,Black,XS,Nylon,70,2021-05-10,5,41.47,7.57
+Reebok,Jeans,Yellow,XL,Silk,154,2023-12-16,3,37.59,22.66
+Puma,Shoes,Yellow,XL,Polyester,66,2022-12-02,3,75.87,37.85
+Nike,T-shirt,White,M,Polyester,124,2019-07-25,4,70.39,5.84
+Reebok,Jeans,Red,XL,Denim,161,2020-03-28,1,103.99,40.63
+Puma,T-shirt,Red,XL,Nylon,34,2022-12-25,0,59.1,44.04
+Nike,Sweater,White,XXL,Cotton,14,2022-10-17,4,95.65,38.86
+Nike,Sweater,Red,XXL,Polyester,110,2020-11-15,1,89.72,40.76
+Nike,Jeans,Yellow,L,Wool,59,2022-03-29,4,69.72,24.47
+Reebok,Jacket,Black,XL,Wool,97,2019-09-06,3,65.73,11.49
+Reebok,Shoes,Green,XXL,Wool,40,2019-10-21,3,97.07,18.16
+Under Armour,Jacket,Black,XS,Polyester,64,2023-03-12,5,61.04,22.36
+Puma,Jacket,Red,S,Polyester,163,2020-08-11,3,78.98,21.16
+Under Armour,Jeans,Blue,XL,Denim,30,2023-04-21,4,35.32,16.15
+New Balance,Jacket,Black,XL,Polyester,107,2021-01-20,5,32.2,4.9
+Puma,Dress,Red,M,Polyester,111,2020-11-04,2,93.23,34.61
+Adidas,Dress,White,XXL,Wool,195,2019-08-24,3,100.6,17.23
+Under Armour,Sweater,Yellow,M,Denim,161,2022-07-23,4,105.19,40.26
+New Balance,Jeans,White,XS,Nylon,165,2019-10-14,4,77.0,8.1
+Nike,Jacket,Green,L,Nylon,39,2021-02-26,5,86.47,14.05
+New Balance,Dress,Blue,XXL,Polyester,171,2020-05-29,1,78.58,32.03
+Adidas,Jacket,Black,XL,Wool,125,2023-03-02,4,81.45,36.13
+Adidas,Shoes,Red,S,Denim,63,2023-09-03,4,72.17,35.67
+Adidas,T-shirt,Black,XL,Nylon,129,2021-10-23,3,41.13,15.96
+Puma,Jacket,Green,XXL,Wool,189,2020-09-29,1,87.9,38.8
+Reebok,Sweater,Blue,L,Polyester,96,2019-08-16,2,31.27,7.79
+Reebok,T-shirt,Black,XXL,Polyester,17,2019-08-27,2,20.12,5.07
+Adidas,Jeans,Green,L,Silk,115,2021-05-26,4,104.3,27.83
+Reebok,Jacket,Blue,XXL,Polyester,147,2023-11-08,0,64.38,53.59
+New Balance,Jacket,Black,S,Wool,192,2023-01-04,4,100.87,43.17
+Nike,T-shirt,Red,XS,Polyester,138,2021-01-27,3,79.44,24.96
+Reebok,Sweater,Green,XL,Cotton,93,2022-06-23,1,80.94,49.74
+Puma,Sweater,Red,XL,Silk,130,2020-05-21,1,101.68,41.23
+Adidas,Sweater,Green,M,Polyester,174,2021-05-31,5,71.87,13.53
+Under Armour,Shoes,Red,XS,Polyester,158,2022-02-03,5,63.6,16.29
+Nike,Jeans,White,S,Silk,127,2020-10-05,4,74.69,15.16
+Under Armour,T-shirt,Red,XL,Cotton,13,2023-11-15,3,62.13,36.92
+Adidas,Dress,White,XXL,Denim,136,2023-01-31,4,111.69,48.62
+New Balance,Jeans,Black,XXL,Silk,52,2022-06-13,3,41.76,18.87
+Adidas,Sweater,Black,XXL,Wool,75,2020-12-15,3,30.62,9.26
+Under Armour,Sweater,Red,L,Wool,30,2021-07-29,4,84.7,24.09
+Adidas,Jacket,Green,XS,Cotton,46,2021-02-08,3,32.08,10.19
+Adidas,Shoes,Black,L,Polyester,78,2019-10-20,5,36.84,1.0
+Adidas,Shoes,Black,XXL,Silk,122,2022-08-02,1,72.32,45.23
+Reebok,Jeans,Red,L,Nylon,185,2021-08-21,4,72.06,20.95
+New Balance,T-shirt,Green,XL,Cotton,148,2023-12-21,5,53.83,23.91
+Reebok,Sweater,Red,S,Silk,114,2020-12-24,3,81.18,24.75
+Puma,Dress,Yellow,S,Silk,101,2024-04-25,5,109.43,52.38
+Under Armour,Jacket,Red,S,Cotton,53,2020-07-30,5,82.84,8.67
+Nike,T-shirt,Green,XL,Nylon,73,2021-04-17,2,118.77,49.43
+Under Armour,T-shirt,Black,XXL,Wool,169,2023-09-22,4,100.09,49.99
+Under Armour,Shoes,Black,M,Denim,158,2023-07-30,3,36.8,20.78
+Puma,T-shirt,Blue,S,Denim,19,2020-12-21,0,90.9,49.46
+New Balance,Shoes,Red,L,Wool,198,2020-06-09,3,57.21,14.34
+Reebok,Shoes,Black,L,Polyester,101,2021-03-05,4,102.27,24.99
+Nike,Shoes,Yellow,XXL,Denim,121,2021-12-06,5,25.53,6.13
+Nike,Jacket,Black,M,Denim,173,2022-05-27,1,29.11,17.67
+Puma,Dress,White,XS,Polyester,93,2023-01-08,3,117.64,59.88
+Adidas,Sweater,White,XL,Denim,86,2023-05-16,3,55.79,30.36
+Under Armour,Jacket,Yellow,XL,Wool,28,2021-03-23,1,42.03,20.57
+Under Armour,Jacket,Black,L,Nylon,123,2022-07-15,4,105.21,40.04
+Nike,Dress,Black,S,Cotton,84,2021-01-01,4,40.33,9.16
+Under Armour,T-shirt,Green,S,Silk,181,2020-04-25,5,112.26,8.8
+Nike,Sweater,Black,M,Polyester,141,2020-03-15,3,91.03,20.68
+Reebok,Jeans,Yellow,XS,Wool,150,2020-08-12,5,76.22,8.25
+Reebok,T-shirt,Green,S,Denim,68,2023-06-27,5,86.75,34.32
+Nike,Shoes,Black,S,Silk,139,2022-12-31,5,22.47,7.79
+Puma,T-shirt,Green,L,Cotton,123,2020-12-11,3,62.77,18.92
+Under Armour,Dress,White,XXL,Cotton,138,2020-03-14,1,57.39,22.2
+New Balance,Jeans,White,S,Polyester,49,2024-07-02,1,26.52,21.67
+New Balance,Sweater,Black,XL,Polyester,34,2020-01-09,4,42.5,5.48
+Nike,Sweater,Blue,S,Denim,196,2021-04-25,4,86.37,22.31
+Puma,Sweater,White,S,Nylon,46,2019-09-16,3,74.48,13.22
+New Balance,Dress,Green,XS,Cotton,109,2024-05-28,4,36.58,20.77
+New Balance,Shoes,Yellow,XL,Wool,79,2021-06-06,2,100.39,43.15
+Reebok,Jeans,Blue,M,Denim,144,2021-05-20,3,115.21,39.77
+Under Armour,Jeans,Black,XL,Cotton,13,2021-05-05,4,43.78,11.43
+Under Armour,T-shirt,Black,M,Denim,131,2021-09-10,1,114.1,61.18
+Reebok,Shoes,Blue,XS,Cotton,178,2021-12-22,1,115.07,64.94
+Adidas,Jacket,Red,XS,Nylon,198,2019-08-28,5,98.56,1.22
+Nike,Jeans,Blue,XXL,Denim,171,2020-02-02,3,29.47,6.35
+Puma,Sweater,Yellow,XXL,Denim,38,2020-05-25,5,114.39,9.9
+Puma,Sweater,Black,L,Cotton,78,2021-04-11,5,80.14,13.99
+New Balance,Jacket,Green,XS,Denim,36,2022-12-02,4,110.28,46.2
+New Balance,Jacket,White,S,Wool,119,2022-07-26,5,36.29,11.02
+Adidas,T-shirt,Red,XL,Nylon,189,2020-09-06,4,99.24,19.36
+Puma,T-shirt,Green,M,Cotton,191,2022-09-19,3,60.07,28.75
+Puma,Dress,Blue,XL,Polyester,171,2022-11-11,3,107.84,53.18
+Under Armour,Shoes,Black,XL,Silk,145,2020-07-31,4,65.92,12.19
+Nike,Sweater,Yellow,XL,Cotton,135,2022-09-25,3,93.77,45.04
+Under Armour,Dress,Blue,XL,Wool,104,2020-09-19,3,113.4,31.6
+Reebok,Sweater,Blue,XL,Wool,82,2023-08-30,2,34.33,22.42
+New Balance,Dress,Green,XXL,Polyester,94,2022-03-13,5,40.5,10.8
+Under Armour,T-shirt,Green,XS,Cotton,145,2023-06-24,5,67.09,26.49
+Adidas,Jeans,Black,XXL,Cotton,118,2020-08-16,4,62.42,11.82
+Nike,Shoes,Green,XL,Cotton,77,2023-08-03,3,36.94,20.9
+Adidas,Jacket,Red,XL,Wool,112,2024-03-01,5,71.94,33.35
+Nike,Sweater,Black,M,Nylon,94,2022-01-09,1,91.34,52.0
+Nike,Shoes,Yellow,XL,Nylon,81,2021-10-18,1,23.8,13.01
+Nike,T-shirt,Red,XL,Polyester,93,2020-08-12,2,101.4,35.31
+Puma,T-shirt,Blue,XXL,Wool,10,2023-11-18,2,29.5,19.91
+New Balance,T-shirt,White,XL,Silk,143,2021-09-28,5,114.0,25.2
+Under Armour,Dress,Green,S,Denim,101,2022-12-06,1,49.86,32.91
+Puma,Shoes,Yellow,XXL,Polyester,117,2021-04-15,2,57.18,23.76
+New Balance,Jacket,Black,S,Nylon,168,2020-08-02,4,74.1,13.74
+Puma,T-shirt,Green,S,Silk,17,2020-05-12,3,48.55,11.8
+Under Armour,Dress,Red,XL,Polyester,159,2019-08-15,5,60.01,1.0
+Adidas,T-shirt,Blue,XS,Polyester,146,2023-11-16,5,103.3,44.89
+New Balance,Dress,Blue,S,Wool,181,2019-08-08,5,65.62,1.0
+Nike,Shoes,Green,L,Cotton,56,2019-08-25,3,28.27,4.85
+Adidas,Jeans,Black,S,Nylon,10,2023-08-29,3,32.47,18.6
+Adidas,Dress,Black,M,Nylon,114,2021-06-22,5,47.91,9.31
+New Balance,Sweater,Green,XS,Cotton,189,2020-12-09,3,42.18,12.69
+Reebok,Jacket,White,XXL,Silk,48,2021-11-06,4,65.14,20.31
+New Balance,Dress,Green,M,Silk,99,2019-07-17,4,68.23,5.51
+Puma,Jacket,Green,M,Silk,84,2023-08-08,5,92.9,37.82
+Nike,Dress,White,S,Cotton,133,2023-08-21,1,29.22,21.35
+Under Armour,Jacket,Yellow,M,Wool,97,2020-10-16,5,118.27,14.91
+Adidas,Shoes,Green,M,Wool,106,2021-12-19,5,35.36,8.61
+Reebok,Jeans,Yellow,XS,Denim,93,2021-10-12,2,117.14,54.46
+Reebok,Sweater,Red,S,Polyester,36,2020-10-02,1,44.4,19.63
+Adidas,Sweater,Green,XS,Nylon,42,2019-09-07,1,60.27,20.19
+New Balance,Sweater,Green,XL,Cotton,125,2020-11-01,2,105.71,39.16
+New Balance,Dress,Black,S,Wool,107,2023-03-25,1,90.33,62.32
+New Balance,Sweater,Green,M,Nylon,182,2022-10-21,4,45.41,18.5
+Adidas,T-shirt,White,XXL,Denim,69,2024-05-18,3,46.83,30.2
+New Balance,T-shirt,Yellow,S,Silk,67,2023-02-20,5,95.14,34.33
+Reebok,Sweater,White,XXL,Cotton,188,2023-05-15,4,63.5,29.45
+Puma,Shoes,Yellow,S,Nylon,183,2023-06-04,5,68.02,26.48
+New Balance,Sweater,Green,XL,Wool,142,2022-12-08,5,67.24,22.9
+Reebok,Dress,Yellow,XS,Silk,195,2024-06-28,4,77.93,44.9
+Reebok,Sweater,Green,S,Denim,103,2022-02-12,3,101.74,42.59
+Reebok,Jacket,White,XXL,Polyester,101,2024-07-01,2,91.39,67.35
+Puma,Shoes,Red,S,Polyester,155,2022-05-05,4,21.53,7.77
+Puma,Jeans,Yellow,XXL,Polyester,173,2022-05-07,4,30.9,11.17
+New Balance,Dress,Yellow,L,Wool,158,2023-05-15,5,106.77,40.98
+Puma,Dress,Yellow,S,Cotton,183,2023-06-18,3,92.97,51.43
+Under Armour,T-shirt,Yellow,XS,Denim,195,2023-07-31,2,58.99,38.04
+Under Armour,Dress,Green,L,Denim,129,2022-05-02,3,55.19,24.3
+Under Armour,Dress,Green,XXL,Denim,174,2023-06-14,4,67.02,31.64
+Under Armour,Jeans,Red,M,Nylon,115,2019-12-13,2,116.06,32.69
+Nike,Shoes,Green,M,Wool,14,2021-12-20,3,56.44,22.79
+Nike,Jacket,White,S,Nylon,168,2019-08-25,4,118.18,10.81
+New Balance,Jeans,Yellow,XS,Wool,119,2023-07-08,2,81.82,52.25
+Nike,Shoes,Red,S,Silk,97,2021-09-18,5,106.15,23.18
+Adidas,Shoes,Blue,M,Wool,173,2020-06-20,2,68.7,22.93
+Nike,Shoes,White,S,Polyester,83,2022-03-04,2,27.26,13.74
+New Balance,Jacket,Black,S,Cotton,193,2022-05-28,4,70.54,25.92
+Adidas,T-shirt,Red,M,Nylon,36,2020-07-30,4,20.33,3.75
+Reebok,Shoes,Black,M,Silk,128,2024-01-21,5,38.13,17.26
+Nike,Jeans,Yellow,L,Polyester,32,2021-11-19,3,80.05,31.65
+Puma,Jeans,Blue,L,Denim,108,2023-08-24,5,38.91,16.01
+New Balance,Jeans,Black,XS,Silk,100,2021-02-01,5,94.67,14.73
+Under Armour,Sweater,White,XXL,Nylon,61,2020-01-16,5,21.28,1.08
+Adidas,Sweater,Red,XXL,Wool,56,2022-01-24,5,24.06,6.1
+New Balance,Shoes,Green,XS,Cotton,71,2021-11-26,3,86.45,34.34
+Reebok,Jeans,White,M,Polyester,198,2023-01-09,5,80.56,28.14
+Nike,Dress,Black,XS,Cotton,57,2021-10-29,0,96.49,60.75
+Under Armour,T-shirt,Green,XS,Nylon,114,2022-12-02,4,23.78,9.96
+Puma,Dress,Black,L,Denim,138,2022-02-05,4,72.52,24.42
+Reebok,T-shirt,Yellow,M,Silk,148,2022-01-12,5,47.57,11.9
+New Balance,Shoes,Green,L,Cotton,151,2021-11-18,5,75.4,17.72
+Puma,T-shirt,Blue,S,Silk,81,2023-03-27,3,21.43,11.37
+Nike,Sweater,White,M,Cotton,104,2022-09-17,2,93.89,52.4
+Adidas,T-shirt,Red,XL,Nylon,16,2023-04-19,4,27.56,12.59
+Reebok,Jeans,Blue,XS,Denim,183,2022-09-19,3,30.27,14.49
+Nike,Jeans,Black,XS,Silk,168,2019-07-19,4,85.54,6.96
+Nike,Shoes,Black,M,Cotton,25,2023-09-16,3,61.9,35.77
+Adidas,Shoes,Blue,XL,Cotton,179,2023-08-20,4,35.02,17.17
+Adidas,T-shirt,Black,XXL,Nylon,176,2023-02-16,1,30.28,20.58
+Nike,Sweater,Yellow,M,Silk,63,2021-04-08,3,57.7,19.25
+Adidas,Dress,Red,XS,Cotton,181,2022-05-27,4,29.52,10.84
+Reebok,Sweater,White,XXL,Denim,92,2019-12-15,5,85.43,3.6
+Adidas,Sweater,Yellow,XS,Polyester,145,2021-10-19,4,87.49,26.85
+Reebok,Dress,Green,M,Nylon,75,2023-12-01,5,98.49,43.2
+Nike,Jeans,Red,XXL,Cotton,179,2021-03-01,3,69.25,22.39
+Under Armour,Shoes,Red,S,Nylon,76,2021-01-20,3,72.31,22.58
+Nike,Jacket,Black,L,Wool,124,2023-01-15,2,106.35,62.85
+New Balance,Sweater,White,M,Cotton,102,2023-11-15,0,58.19,48.54
+Nike,Jeans,Green,S,Polyester,88,2020-09-07,5,65.29,7.53
+Nike,T-shirt,White,XL,Denim,110,2020-11-27,5,93.39,12.84
+Reebok,Sweater,Blue,XS,Wool,169,2023-02-11,4,75.59,33.14
+Under Armour,Sweater,White,XS,Nylon,188,2020-01-20,3,96.24,20.41
+Adidas,T-shirt,Green,M,Denim,184,2022-06-18,5,109.48,32.09
+Puma,Jacket,Blue,XL,Silk,103,2023-09-30,1,33.11,24.56
+Reebok,Jacket,White,M,Silk,124,2019-12-27,4,77.68,9.75
+Nike,Dress,White,L,Nylon,171,2022-08-06,3,70.42,32.86
+New Balance,Shoes,Green,M,Silk,22,2021-06-13,5,34.91,6.7
+Nike,T-shirt,Green,XS,Silk,90,2021-05-08,2,49.51,20.89
+Puma,Jeans,Blue,XS,Polyester,76,2024-06-29,5,67.14,33.33
+Adidas,Jeans,Yellow,XXL,Wool,135,2023-11-18,5,103.0,44.81
+Under Armour,Jacket,Black,S,Cotton,148,2023-07-31,5,33.68,13.64
+New Balance,Dress,White,L,Wool,122,2022-12-17,5,54.96,18.85
+Nike,Shoes,Black,XXL,Nylon,165,2022-09-25,1,20.58,13.18
+Puma,Dress,Black,XXL,Polyester,194,2020-11-07,3,103.66,30.27
+New Balance,Jeans,Blue,XXL,Denim,130,2020-10-23,5,27.66,3.54
+New Balance,Shoes,White,S,Nylon,75,2024-07-11,1,104.21,85.42
+Nike,Shoes,White,L,Wool,98,2020-12-14,3,82.69,24.99
+Puma,Dress,Black,XS,Polyester,44,2021-10-26,2,52.38,24.55
+Adidas,Shoes,White,XXL,Polyester,13,2019-08-27,2,27.52,6.94
+Puma,Jacket,White,XXL,Wool,198,2023-08-04,4,62.56,30.41
+Nike,Jacket,Red,XXL,Denim,175,2020-01-18,2,36.84,10.74
+Reebok,Dress,Green,M,Cotton,181,2022-09-29,4,44.79,17.98
+New Balance,Jacket,Blue,XS,Denim,98,2022-11-01,4,103.62,42.53
+Adidas,Shoes,Blue,S,Denim,80,2020-04-26,5,55.9,4.4
+Puma,Jacket,Red,S,Wool,158,2022-07-26,5,79.94,24.27
+Reebok,Dress,Green,M,Polyester,144,2022-12-27,2,85.29,49.96
+Under Armour,Jacket,Black,XXL,Polyester,38,2020-02-05,2,91.4,27.09
+Under Armour,T-shirt,Blue,XL,Cotton,125,2022-04-25,3,91.28,40.01
+Puma,Jacket,Blue,XS,Cotton,144,2021-08-02,4,85.56,24.43
+Adidas,Sweater,Blue,S,Nylon,76,2020-11-21,3,70.08,20.74
+Nike,Jeans,Blue,XL,Nylon,102,2021-04-23,3,43.04,14.54
+Under Armour,T-shirt,Blue,XL,Polyester,112,2023-10-15,5,79.71,33.94
+Reebok,Dress,Blue,XS,Nylon,111,2021-04-15,5,93.2,16.37
+Reebok,Jeans,Red,S,Cotton,133,2021-09-16,3,65.64,24.8
+Reebok,Sweater,Blue,XL,Denim,119,2019-07-27,2,48.63,11.84
+Under Armour,Jeans,Yellow,S,Nylon,83,2024-05-31,5,84.39,41.22
+Puma,Jacket,Green,XL,Nylon,110,2024-02-02,1,50.42,39.12
+New Balance,Jeans,Green,XS,Polyester,192,2019-10-27,4,72.67,7.9
+Under Armour,Dress,White,XS,Wool,87,2022-11-07,5,92.05,30.57
+Adidas,Jacket,Black,S,Wool,159,2021-08-02,3,36.16,13.22
+Adidas,Jacket,White,XS,Silk,169,2020-06-08,5,107.22,9.69
+Puma,Sweater,Blue,L,Silk,91,2019-08-15,5,107.28,1.0
+Reebok,Shoes,White,XS,Denim,45,2021-08-06,2,111.39,49.74
+Under Armour,Jeans,Blue,M,Polyester,146,2020-04-15,4,52.22,8.13
+Puma,Shoes,Red,XS,Polyester,35,2020-10-28,2,35.73,13.2
+New Balance,Sweater,Yellow,S,Denim,31,2023-07-27,5,114.6,46.28
+Nike,Jacket,Green,XXL,Wool,183,2021-03-27,4,104.41,26.15
+Adidas,Jacket,Green,XL,Polyester,154,2022-08-18,2,78.08,42.93
+Nike,Sweater,Black,L,Cotton,163,2023-01-28,3,57.17,29.42
+Nike,Jacket,Blue,S,Polyester,129,2020-01-07,5,53.98,2.62
+New Balance,Shoes,Red,S,Nylon,175,2021-04-09,4,90.5,22.98
+Under Armour,Shoes,Black,XL,Polyester,137,2019-11-25,2,20.37,5.64
+New Balance,Jeans,Black,XL,Wool,139,2020-04-27,4,90.52,14.38
+Puma,T-shirt,Black,M,Cotton,143,2019-07-28,5,108.49,1.0
+Nike,Shoes,Red,S,Silk,150,2022-09-17,4,89.97,35.82
+Nike,Sweater,Red,L,Cotton,100,2021-07-12,5,72.31,14.44
+Reebok,Dress,Blue,M,Cotton,84,2020-02-08,4,21.18,2.91
+Reebok,T-shirt,Red,M,Nylon,192,2020-03-19,4,84.18,12.48
+Nike,Dress,Black,L,Cotton,88,2024-01-25,4,31.34,16.73
+Under Armour,Jacket,Blue,XL,Polyester,72,2021-06-23,5,65.86,12.81
+Nike,T-shirt,Black,XL,Wool,82,2021-09-29,3,95.9,36.57
+Adidas,Jacket,Black,S,Cotton,55,2021-09-25,5,87.91,19.36
+Puma,Jacket,Green,M,Cotton,143,2019-11-10,1,80.09,28.24
+Under Armour,Shoes,Red,L,Polyester,57,2021-01-23,4,27.64,6.44
+New Balance,Sweater,White,L,Denim,197,2021-01-12,4,69.69,16.04
+Reebok,Dress,Green,L,Cotton,180,2023-02-15,1,79.46,53.99
+New Balance,Shoes,Green,M,Silk,148,2021-10-14,5,66.89,15.08
+Puma,Jeans,White,XS,Cotton,67,2019-11-22,1,65.99,23.49
+Adidas,Sweater,Black,XS,Cotton,99,2019-12-05,2,24.75,6.92
+Under Armour,Sweater,White,S,Cotton,141,2022-12-24,4,104.5,44.41
+Under Armour,Dress,Red,XXL,Silk,135,2021-12-08,2,95.61,45.95
+Under Armour,Sweater,Black,M,Silk,92,2023-06-15,1,49.64,35.36
+Reebok,Dress,Yellow,XXL,Silk,196,2024-06-26,2,59.45,43.73
+New Balance,Sweater,Black,M,Silk,142,2022-03-30,2,78.21,39.98
+Puma,T-shirt,Black,XS,Cotton,27,2023-06-16,3,89.43,49.42
+Adidas,Dress,Red,XL,Polyester,104,2020-05-27,5,55.36,4.82
+New Balance,Jeans,Black,XS,Wool,162,2020-10-01,0,93.34,48.72
+Nike,Shoes,White,XXL,Wool,141,2024-04-24,3,71.23,45.47
+Nike,Sweater,Black,M,Cotton,79,2021-10-29,2,29.78,13.98
+Nike,Shoes,Green,XXL,Nylon,178,2021-11-26,5,82.79,19.64
+Puma,T-shirt,White,L,Wool,174,2023-12-29,5,79.92,35.67
+Under Armour,Shoes,White,M,Silk,68,2023-09-16,3,115.16,66.54
+Adidas,Jeans,Black,S,Nylon,187,2020-10-31,3,37.61,10.91
+New Balance,Sweater,Red,XS,Polyester,193,2024-01-18,2,54.88,37.96
+Reebok,Sweater,Green,S,Denim,162,2024-05-20,4,48.76,27.57
+New Balance,Shoes,White,XS,Nylon,171,2023-04-22,1,108.33,75.56
+Under Armour,Shoes,Blue,XS,Polyester,156,2021-01-01,3,41.85,12.85
+Reebok,Shoes,White,S,Nylon,107,2020-09-01,4,92.35,17.89
+Under Armour,Jacket,Blue,S,Wool,145,2021-04-14,3,23.57,7.9
+Nike,Sweater,Black,L,Silk,191,2023-05-26,0,51.18,40.27
+Under Armour,Jeans,Green,XXL,Polyester,56,2021-12-25,1,94.79,53.58
+Nike,Jeans,Yellow,S,Polyester,137,2024-06-20,4,24.58,14.11
+Nike,T-shirt,White,XL,Nylon,171,2023-05-19,4,48.92,22.74
+Adidas,Jacket,Blue,M,Silk,91,2021-03-22,4,85.57,21.31
+Adidas,T-shirt,White,XXL,Cotton,167,2024-06-22,5,46.33,22.91
+New Balance,T-shirt,Green,L,Polyester,22,2022-12-05,1,28.72,18.95
+Reebok,Sweater,White,XS,Silk,128,2019-09-07,3,37.74,6.61
+Reebok,T-shirt,Blue,XXL,Cotton,56,2022-02-17,4,36.77,12.5
+Puma,Dress,White,XL,Polyester,128,2021-06-20,3,40.8,14.43
+Puma,Jacket,Green,S,Silk,42,2020-07-15,4,75.76,13.68
+Reebok,Sweater,Black,S,Denim,44,2020-01-15,4,34.2,4.47
+Adidas,Dress,Green,XL,Polyester,125,2023-04-30,0,53.54,41.75
+Nike,Jeans,Green,M,Wool,97,2020-12-06,4,76.75,16.88
+Puma,Jacket,Red,XL,Silk,134,2023-04-02,4,48.18,21.78
+Adidas,Jeans,Black,XS,Nylon,163,2020-12-14,5,109.53,15.57
+Nike,Shoes,White,XXL,Nylon,184,2020-02-26,3,67.23,14.94
+New Balance,Jeans,Yellow,XL,Denim,117,2019-10-22,4,49.86,5.35
+Puma,Sweater,White,XXL,Cotton,62,2020-10-07,3,82.82,23.48
+Adidas,Dress,White,L,Wool,120,2021-09-10,4,32.89,9.74
+Reebok,Jacket,Blue,XL,Denim,74,2020-04-03,4,57.48,8.76
+Adidas,Sweater,Green,XL,Cotton,86,2020-10-29,4,68.38,14.33
+New Balance,T-shirt,Green,XS,Nylon,128,2023-06-09,3,29.78,16.4
+Puma,Jacket,Black,XS,Silk,83,2023-03-15,1,109.25,75.07
+Nike,Sweater,Red,M,Denim,156,2022-05-15,1,51.44,31.06
+Puma,Jacket,White,XS,Wool,14,2023-03-25,0,24.0,18.48
+Under Armour,Jacket,Blue,XS,Polyester,17,2022-10-05,5,80.73,26.08
+New Balance,Sweater,Yellow,XS,Denim,141,2020-07-19,1,112.69,47.52
+Reebok,Jeans,Green,XL,Denim,58,2019-10-16,4,68.03,7.19
+Under Armour,Jeans,Red,XL,Polyester,86,2023-07-30,2,115.95,74.75
+Puma,Sweater,Blue,XS,Silk,47,2023-04-20,3,65.77,35.32
+Puma,Jacket,Blue,S,Nylon,126,2023-10-29,5,75.2,32.31
+Adidas,Jeans,Yellow,XS,Denim,58,2023-09-04,3,57.51,33.04
+Adidas,Dress,Black,XS,Denim,119,2022-09-03,3,62.98,29.87
+Under Armour,T-shirt,White,XXL,Cotton,189,2022-08-13,3,75.51,35.38
+New Balance,T-shirt,Blue,M,Nylon,59,2024-07-03,2,77.74,57.34
+Adidas,Dress,Blue,XS,Silk,81,2022-09-19,5,78.02,24.86
+Adidas,Dress,White,XS,Nylon,100,2019-10-30,1,102.01,35.66
+Under Armour,Dress,Yellow,XXL,Cotton,187,2023-06-03,4,47.52,22.29
+Adidas,Jacket,White,M,Cotton,39,2020-10-14,3,96.82,27.64
+Under Armour,Jeans,Green,XS,Wool,13,2021-03-12,4,78.75,19.4
+Nike,Dress,Black,XS,Denim,84,2020-03-05,5,45.22,2.91
+Under Armour,Sweater,Yellow,L,Wool,94,2019-09-29,5,108.78,2.29
+Adidas,Shoes,Green,XXL,Wool,75,2023-05-30,3,99.13,54.32
+New Balance,T-shirt,Yellow,M,Denim,129,2022-10-17,0,105.68,76.76
+Reebok,T-shirt,White,M,Nylon,30,2020-10-30,5,23.17,3.01
+Reebok,Dress,White,L,Denim,52,2021-07-22,4,54.01,15.26
+Under Armour,Jeans,Yellow,M,Polyester,38,2020-01-13,2,64.13,18.61
+New Balance,Dress,White,XXL,Nylon,164,2019-11-26,5,108.54,4.01
+Reebok,Sweater,Yellow,S,Denim,97,2024-02-02,2,57.91,40.3
+New Balance,Dress,Red,XL,Cotton,190,2022-09-23,2,108.16,60.54
+Reebok,Jacket,White,XL,Wool,58,2021-08-04,1,41.94,22.06
+Adidas,Dress,Yellow,XXL,Silk,112,2021-12-17,2,23.25,11.23
+Nike,Jacket,White,M,Polyester,19,2021-10-12,4,52.89,16.13
+Nike,Jeans,Green,XL,Nylon,12,2020-04-10,2,95.64,30.05
+Adidas,Shoes,Green,XS,Polyester,126,2020-01-10,4,58.66,7.59
+New Balance,Jeans,Blue,XS,Silk,118,2020-07-27,2,90.35,31.07
+Nike,Sweater,White,S,Denim,99,2019-08-03,5,114.04,1.0
+Under Armour,Jeans,Red,L,Wool,134,2021-01-08,5,81.68,12.17
+Nike,Jacket,Green,XXL,Wool,127,2023-05-13,4,67.49,31.27
+Reebok,Jeans,Red,XL,Cotton,110,2024-04-06,2,25.67,18.31
+Adidas,Jacket,Blue,S,Denim,100,2020-11-12,5,66.9,8.93
+Puma,Sweater,Red,XL,Denim,78,2020-10-01,4,30.75,6.21
+Reebok,Jacket,Green,XS,Nylon,115,2020-10-29,5,112.97,14.64
+Reebok,Dress,Black,S,Cotton,20,2023-07-15,4,34.15,16.41
+Under Armour,Jeans,Red,XXL,Polyester,22,2020-03-19,3,118.97,27.15
+Puma,T-shirt,White,S,Silk,114,2021-08-22,0,37.76,23.07
+Under Armour,Dress,Red,L,Denim,175,2021-06-17,0,43.83,25.99
+Adidas,Shoes,Black,XS,Silk,177,2024-06-13,3,106.3,69.31
+Puma,Jacket,Yellow,S,Denim,170,2022-12-21,5,91.07,31.34
+New Balance,Shoes,Black,XS,Cotton,132,2021-12-09,2,37.85,18.2
+Adidas,Shoes,Yellow,XS,Cotton,43,2021-07-11,3,29.76,10.7
+Nike,Shoes,Black,M,Polyester,164,2024-02-27,2,110.87,77.91
+Reebok,Dress,Red,M,Wool,109,2023-06-25,1,71.47,51.11
+Nike,Dress,Yellow,L,Silk,60,2020-01-31,1,90.37,33.89
+Adidas,Dress,Yellow,XS,Denim,98,2020-06-10,5,68.5,6.23
+Under Armour,Dress,Black,M,Denim,30,2022-06-26,5,105.47,31.15
+New Balance,Jacket,Red,XXL,Cotton,166,2021-02-20,1,64.13,30.84
+Reebok,Jeans,Red,XXL,Denim,82,2019-08-26,2,55.29,13.92
+Reebok,Jeans,Red,XL,Silk,28,2024-01-27,2,53.62,37.23
+Puma,Dress,Yellow,XS,Wool,163,2023-01-14,5,44.24,15.51
+New Balance,T-shirt,Yellow,S,Silk,162,2024-02-23,3,61.79,38.41
+Nike,Jeans,White,XS,Wool,49,2022-09-04,5,54.46,17.13
+New Balance,Jacket,White,S,Wool,133,2023-08-18,0,27.94,22.63
+Adidas,Jacket,Yellow,L,Nylon,38,2023-12-27,3,81.78,49.54
+Adidas,Jeans,Red,M,Polyester,162,2024-06-10,3,42.45,27.64
+Adidas,Jacket,Blue,XL,Silk,156,2020-11-03,4,115.07,24.28
+Adidas,Jacket,Blue,M,Wool,182,2021-01-11,5,119.64,17.93
+Under Armour,Sweater,Yellow,XXL,Silk,55,2022-04-04,5,20.48,5.58
+New Balance,Jacket,Yellow,S,Cotton,64,2022-03-09,4,26.7,9.22
+Adidas,Jeans,Red,XXL,Polyester,10,2024-03-03,2,75.38,53.08
+Under Armour,Jeans,Red,L,Polyester,148,2020-04-22,4,98.11,15.46
+New Balance,Shoes,Blue,S,Cotton,144,2019-11-13,3,42.52,8.22
+Under Armour,Shoes,Blue,XXL,Cotton,109,2021-03-02,4,60.88,14.83
+Puma,T-shirt,Black,L,Silk,195,2020-11-25,5,96.97,13.28
+Puma,Dress,Red,XXL,Nylon,157,2021-05-07,4,118.85,31.1
+Nike,Jeans,Green,L,Silk,172,2019-11-05,4,71.87,7.99
+Adidas,Jacket,Black,XXL,Silk,60,2023-03-29,4,96.11,43.34
+Under Armour,Shoes,Red,XL,Wool,112,2022-06-20,2,84.82,45.27
+Puma,Shoes,Green,XL,Silk,30,2022-10-10,1,21.28,13.71
+Adidas,T-shirt,Green,M,Polyester,181,2021-04-29,3,59.6,20.23
+Puma,Sweater,Yellow,XL,Denim,128,2020-08-05,3,60.73,16.17
+Puma,Shoes,Yellow,S,Nylon,138,2021-04-16,4,100.77,25.79
+Nike,T-shirt,Green,S,Cotton,119,2023-07-02,2,84.94,54.11
+Under Armour,Jacket,Green,XXL,Polyester,115,2020-06-06,1,66.83,27.39
+Under Armour,Jeans,White,XXL,Cotton,150,2022-06-11,4,117.82,43.74
+New Balance,T-shirt,Black,L,Wool,25,2021-12-06,5,104.03,24.97
+New Balance,Jacket,Green,M,Silk,128,2020-03-08,1,64.58,24.88
+Puma,Sweater,Yellow,XXL,Wool,43,2019-10-02,0,62.27,26.27
+Adidas,Shoes,Yellow,M,Cotton,161,2020-03-22,4,46.23,6.89
+New Balance,T-shirt,Yellow,M,Silk,150,2023-06-18,3,50.73,28.06
+Under Armour,Jacket,Blue,L,Denim,143,2020-01-25,3,93.09,19.87
+New Balance,Dress,Black,XL,Denim,48,2021-07-27,2,106.0,47.05
+Nike,Jeans,Black,XS,Silk,11,2022-06-09,3,39.03,17.59
+Under Armour,Jacket,Black,S,Wool,20,2021-02-19,1,79.35,38.13
+Nike,Dress,White,L,Cotton,16,2022-09-11,3,101.04,48.14
+Adidas,Jeans,Blue,S,Nylon,135,2019-10-16,3,24.07,4.47
+New Balance,Shoes,Black,XL,Wool,16,2021-10-26,1,102.94,56.49
+Puma,Jeans,Blue,XL,Polyester,112,2021-02-22,4,118.86,28.69
+Adidas,Jeans,Blue,L,Polyester,176,2021-10-01,5,27.48,6.1
+New Balance,Dress,Green,L,Polyester,85,2023-08-03,0,111.14,89.55
+New Balance,T-shirt,Blue,XS,Cotton,124,2021-03-25,3,64.0,21.11
+Adidas,Shoes,Red,M,Polyester,95,2021-07-13,4,66.53,18.63
+Nike,Dress,Red,XS,Polyester,136,2019-10-20,0,93.36,39.85
+Adidas,Dress,White,L,Silk,124,2023-08-30,3,114.61,65.69
+Puma,Jacket,White,XS,Silk,188,2020-03-16,1,41.28,15.99
+Under Armour,Jacket,Black,XXL,Silk,61,2022-04-08,2,110.92,56.98
+Nike,Sweater,Red,XXL,Cotton,12,2022-01-11,4,91.5,30.18
+New Balance,Dress,White,XXL,Polyester,86,2023-04-05,5,95.98,35.79
+Nike,Dress,White,S,Wool,167,2021-07-18,5,66.68,13.43
+Adidas,Sweater,Green,XL,Polyester,19,2022-04-04,0,72.36,48.67
+Adidas,Dress,Red,XL,Silk,125,2024-01-12,3,93.28,56.91
+New Balance,Dress,Blue,XS,Denim,143,2021-02-20,1,97.32,46.79
+Adidas,Sweater,White,XXL,Polyester,126,2022-05-19,3,20.8,9.25
+Reebok,Sweater,White,M,Silk,191,2023-10-18,3,31.66,18.57
+Puma,Sweater,Red,L,Polyester,53,2024-02-23,5,35.16,16.23
+Adidas,Jeans,Yellow,XL,Denim,89,2024-07-03,0,30.13,27.04
+Reebok,Jacket,White,XS,Cotton,72,2022-12-28,1,30.53,20.33
+Nike,Sweater,Green,L,Nylon,86,2023-11-06,3,55.99,33.13
+Puma,Jeans,Black,XL,Nylon,57,2019-10-15,1,62.2,21.49
+Reebok,Shoes,Yellow,XXL,Polyester,86,2020-01-16,2,85.85,24.98
+Nike,Jacket,Green,XS,Wool,159,2024-06-30,4,54.93,31.68
+Under Armour,Sweater,Green,L,Polyester,130,2024-02-04,3,39.92,24.61
+Under Armour,Shoes,Green,M,Denim,28,2023-01-19,3,100.96,51.7
+Puma,Dress,Red,XS,Polyester,99,2020-03-12,4,44.23,6.47
+Reebok,Dress,Red,XS,Nylon,23,2019-09-04,5,45.17,1.0
+Reebok,Jacket,Yellow,XS,Polyester,102,2022-04-03,4,36.88,12.99
+Nike,T-shirt,Yellow,XL,Polyester,115,2022-02-07,1,24.54,14.17
+Under Armour,Jacket,Blue,M,Silk,16,2023-03-25,4,46.41,20.88
+Under Armour,Jeans,Blue,XXL,Polyester,110,2021-08-11,5,112.59,23.41
+Adidas,Dress,Blue,M,Silk,58,2023-05-22,4,53.68,25.0
+New Balance,Shoes,Green,XXL,Cotton,50,2022-05-16,1,69.2,41.8
+New Balance,Shoes,Black,XS,Wool,164,2022-01-19,5,39.38,9.93
+New Balance,Dress,Blue,XXL,Polyester,168,2023-06-10,5,72.55,28.36
+Reebok,Sweater,Yellow,XS,Silk,143,2023-11-01,4,40.1,20.47
+New Balance,Jeans,Black,M,Denim,153,2023-11-19,5,81.8,35.61
+Puma,T-shirt,Blue,L,Denim,47,2023-05-06,4,68.36,31.54
+Under Armour,Jeans,Red,XS,Silk,69,2022-08-12,5,105.46,32.5
+Puma,Jeans,White,M,Denim,123,2021-06-30,4,49.03,13.55
+New Balance,Jeans,Blue,XL,Denim,105,2020-10-09,5,49.97,6.2
+Puma,Jeans,Blue,M,Polyester,106,2021-10-27,4,49.44,15.28
+Adidas,T-shirt,Green,L,Nylon,42,2021-11-06,4,109.78,34.23
+Under Armour,Jeans,Green,XS,Nylon,72,2023-04-01,5,58.66,21.81
+Puma,T-shirt,Blue,XXL,Polyester,148,2021-05-22,2,46.58,19.83
+Under Armour,Jacket,Green,M,Polyester,150,2023-06-08,3,81.15,44.67
+Adidas,Shoes,Red,S,Nylon,103,2020-09-28,4,114.34,22.99
+New Balance,Jeans,Black,XS,Polyester,74,2023-02-13,4,24.11,10.58
+Nike,Sweater,Black,XS,Polyester,167,2021-06-18,3,101.39,35.81
+Nike,T-shirt,Green,S,Nylon,100,2022-01-10,5,21.8,5.44
+Nike,Shoes,Blue,XS,Silk,160,2021-06-20,4,47.64,13.04
+Puma,Shoes,Red,XL,Cotton,157,2020-12-11,3,43.26,13.04
+Puma,T-shirt,Red,XL,Polyester,143,2021-11-19,3,52.22,20.64
+Puma,Shoes,Yellow,L,Nylon,46,2023-08-23,4,45.8,22.5
+Under Armour,Jeans,Green,XXL,Denim,93,2021-07-10,2,25.18,11.06
+Reebok,Sweater,Yellow,L,Polyester,137,2020-07-21,4,99.14,18.06
+Under Armour,Shoes,Green,M,Polyester,15,2022-07-22,3,39.95,18.48
+Nike,Shoes,Yellow,M,Silk,102,2024-06-17,4,89.44,51.26
+Reebok,Sweater,White,XL,Cotton,164,2022-03-16,4,72.38,25.14
+Adidas,Jeans,Blue,XS,Polyester,93,2020-05-05,4,102.33,16.48
+Reebok,Sweater,Green,XXL,Cotton,150,2020-10-09,5,57.95,7.19
+Adidas,T-shirt,Black,XXL,Nylon,145,2020-11-13,5,93.07,12.44
+Puma,Shoes,Green,S,Nylon,190,2023-07-01,1,39.44,28.27
+Nike,Jeans,Black,XXL,Denim,90,2019-08-15,0,38.43,15.71
+Puma,Jeans,Yellow,XL,Wool,167,2022-04-07,3,104.4,45.25
+Under Armour,Jeans,Yellow,L,Silk,10,2022-01-05,1,56.16,31.91
+New Balance,Jacket,Blue,L,Nylon,84,2023-11-29,1,28.72,21.77
+Puma,Jeans,Black,L,Denim,141,2023-02-18,3,75.2,39.12
+Puma,Dress,Blue,XXL,Polyester,71,2022-05-26,3,105.76,47.26
+Reebok,Dress,Red,XXL,Polyester,77,2021-12-15,1,81.24,45.69
+Adidas,T-shirt,Black,S,Nylon,154,2023-11-11,5,40.5,17.54
+Nike,Jacket,Green,L,Wool,122,2020-11-15,3,100.93,29.7
+Puma,Jacket,Black,L,Denim,94,2020-03-26,1,91.28,35.61
+Puma,Sweater,Yellow,M,Silk,126,2020-07-25,4,41.37,7.58
+Adidas,Jeans,White,XS,Denim,66,2024-01-12,4,108.04,57.28
+Under Armour,Dress,White,XXL,Wool,72,2021-12-27,0,46.63,30.11
+Under Armour,Jacket,Blue,XS,Cotton,194,2021-03-07,3,93.05,30.23
+Reebok,Dress,Red,S,Silk,58,2023-02-27,4,110.48,48.91
+Adidas,Dress,Blue,L,Silk,155,2023-12-05,4,108.24,56.26
+Puma,Jeans,Red,M,Polyester,127,2023-04-05,1,56.65,39.25
+Under Armour,Dress,White,XS,Silk,195,2019-11-25,4,109.66,12.8
+Under Armour,T-shirt,Yellow,S,Silk,19,2021-07-17,1,57.19,29.8
+Nike,T-shirt,White,M,Polyester,89,2023-12-14,3,103.74,62.47
+Nike,Jacket,White,L,Silk,171,2024-02-11,1,62.39,48.56
+New Balance,Jacket,Blue,S,Wool,142,2020-04-28,5,77.09,6.1
+Reebok,Sweater,Green,XXL,Silk,154,2019-09-30,5,109.38,2.34
+Under Armour,Dress,Green,M,Nylon,81,2022-07-17,3,117.26,54.07
+Under Armour,Jacket,Blue,XS,Silk,72,2019-10-28,1,78.27,27.32
+Adidas,Jeans,White,XL,Silk,33,2019-08-27,4,34.22,3.15
+Nike,Jacket,White,XS,Cotton,101,2023-10-07,3,38.3,22.35
+Nike,T-shirt,Blue,XL,Cotton,120,2024-04-22,3,112.94,72.03
+Under Armour,Dress,Red,S,Denim,17,2022-08-08,2,38.54,21.09
+Reebok,T-shirt,Blue,M,Wool,32,2021-11-09,3,64.82,25.45
+Under Armour,Jacket,White,M,Cotton,108,2021-12-24,2,77.69,37.67
+Puma,Jacket,White,M,Denim,168,2019-09-18,1,47.46,16.05
+Nike,T-shirt,Red,L,Wool,90,2021-02-18,4,59.71,14.35
+Nike,Shoes,Blue,XS,Denim,165,2023-10-13,3,35.37,20.7
+Adidas,Sweater,White,XL,Cotton,57,2021-08-17,2,34.08,15.32
+Reebok,Sweater,Blue,L,Cotton,124,2021-04-16,0,95.21,54.83
+Adidas,Jacket,Black,S,Polyester,21,2023-05-20,5,69.89,26.92
+Nike,Sweater,Red,S,Wool,88,2020-06-14,0,24.8,12.2
+New Balance,T-shirt,Yellow,XXL,Denim,40,2021-06-01,4,89.93,24.15
+Reebok,Dress,Green,XXL,Silk,100,2024-05-05,1,99.39,79.65
+Under Armour,Jacket,Red,L,Cotton,44,2020-04-14,4,59.03,9.17
+Under Armour,Jeans,Blue,XXL,Wool,64,2023-03-13,2,30.04,18.22
+New Balance,Shoes,White,XL,Silk,91,2023-11-03,3,76.39,45.14
+Reebok,Sweater,Green,S,Cotton,173,2024-04-27,4,85.46,47.79
+Puma,Sweater,Blue,XXL,Nylon,81,2023-08-02,5,115.67,46.9
+Under Armour,Jeans,Yellow,XXL,Silk,119,2023-10-31,1,38.89,29.17
+Adidas,Shoes,Red,XXL,Cotton,69,2023-05-14,5,107.58,41.26
+Under Armour,Jeans,White,XS,Cotton,122,2021-08-26,4,84.29,24.62
+Under Armour,Shoes,White,S,Denim,175,2023-10-28,4,98.73,50.28
+Puma,T-shirt,Red,XL,Silk,78,2020-08-11,2,38.44,13.38
+Under Armour,Shoes,Blue,XXL,Wool,191,2022-11-15,4,98.66,40.87
+Adidas,T-shirt,Blue,XS,Polyester,23,2022-10-19,5,105.7,34.55
+Adidas,Sweater,Red,L,Denim,111,2023-02-15,2,37.69,22.59
+New Balance,Shoes,Blue,XL,Cotton,29,2021-12-15,3,26.83,10.8
+Adidas,Dress,Red,XS,Wool,117,2024-02-04,4,64.84,34.78
+New Balance,T-shirt,Black,XXL,Nylon,18,2022-08-05,4,92.51,35.74
+Nike,Shoes,Yellow,XS,Denim,106,2019-10-16,3,92.49,17.18
+Under Armour,T-shirt,White,XS,Silk,134,2022-11-09,2,105.94,60.66
+Under Armour,Jacket,Red,XL,Wool,110,2024-05-09,4,34.84,19.6
+Reebok,Shoes,White,XXL,Wool,139,2019-10-18,5,79.47,2.09
+Puma,Jacket,Yellow,M,Wool,167,2023-07-12,2,48.51,31.03
+Nike,T-shirt,Yellow,S,Polyester,143,2024-03-24,1,56.37,44.52
+New Balance,Dress,Black,M,Polyester,178,2021-08-09,0,103.07,62.6
+Under Armour,Sweater,Red,XXL,Denim,160,2023-02-21,5,100.58,36.32
+Adidas,Jeans,Blue,S,Denim,40,2022-05-26,5,95.65,27.44
+Nike,Shoes,Blue,XL,Nylon,29,2022-05-12,5,98.21,27.79
+Nike,T-shirt,Red,S,Cotton,14,2022-09-07,2,49.53,27.51
+New Balance,Dress,Red,XXL,Polyester,158,2020-05-29,2,22.85,7.49
+Adidas,Dress,Yellow,XL,Denim,116,2023-12-04,1,66.84,50.76
+Reebok,Dress,Yellow,XS,Polyester,84,2021-10-22,4,76.25,23.46
+New Balance,T-shirt,White,L,Polyester,133,2024-02-06,5,74.99,34.27
+Under Armour,T-shirt,Green,M,Polyester,70,2023-02-19,1,26.1,17.76
+Puma,Shoes,Yellow,M,Denim,103,2020-08-18,5,37.94,4.17
+Reebok,Shoes,Red,XL,Denim,179,2020-10-09,3,66.67,18.94
+Puma,Dress,Green,S,Nylon,50,2023-09-13,4,119.33,59.31
+New Balance,Dress,Yellow,S,Wool,198,2022-04-08,2,87.87,45.14
+Puma,Shoes,Blue,L,Silk,189,2022-09-25,4,62.16,24.88
+Under Armour,T-shirt,Yellow,XS,Silk,50,2020-07-13,4,73.17,13.17
+Nike,Sweater,Yellow,S,Wool,69,2024-02-25,5,98.58,45.56
+Adidas,T-shirt,Yellow,S,Cotton,39,2020-10-06,3,40.99,11.61
+Puma,Jacket,Yellow,XXL,Nylon,104,2021-12-18,3,110.47,44.55
+Reebok,Dress,Black,XS,Nylon,175,2019-10-19,4,88.69,9.45
+Under Armour,Sweater,Red,L,Polyester,136,2023-12-01,5,25.98,11.4
+Under Armour,Jeans,Green,S,Wool,26,2021-11-30,3,47.12,18.77
+New Balance,T-shirt,Red,XL,Polyester,109,2022-12-29,4,46.01,19.61
+Reebok,Dress,Yellow,XS,Silk,177,2021-03-31,1,85.88,42.21
+Puma,T-shirt,Blue,S,Silk,167,2023-07-03,4,91.06,43.46
+Puma,Jeans,Green,L,Wool,75,2021-04-25,3,113.94,38.55
+Puma,T-shirt,White,M,Silk,33,2020-02-25,1,71.91,27.46
+Reebok,Sweater,Red,XL,Denim,138,2023-05-05,3,32.27,17.46
+Puma,Jeans,White,XXL,Nylon,97,2022-11-13,1,64.01,41.84
+Reebok,Jacket,Blue,XL,Polyester,47,2022-12-18,4,27.32,11.56
+Under Armour,Jacket,Yellow,XL,Nylon,121,2019-09-28,3,98.51,17.81
+Reebok,Dress,Blue,XL,Wool,164,2021-04-17,4,113.98,29.2
+Adidas,Jacket,Red,M,Wool,99,2022-09-21,5,41.46,13.23
+Nike,T-shirt,Green,M,Silk,144,2019-08-13,2,109.62,27.21
+Nike,Sweater,Red,M,Cotton,111,2021-01-17,5,83.92,12.71
+Adidas,Jacket,Blue,M,Denim,51,2021-03-24,3,108.98,35.92
+Reebok,Dress,Blue,L,Cotton,155,2022-02-27,1,65.12,37.95
+New Balance,T-shirt,Red,S,Wool,122,2021-05-31,5,73.09,13.76
+Nike,Dress,White,M,Nylon,53,2019-07-16,2,99.36,23.9
+Adidas,Dress,White,M,Denim,120,2020-11-27,2,64.23,24.25
+New Balance,Sweater,Red,L,Polyester,128,2021-03-19,5,24.53,4.13
+Puma,Shoes,Red,XS,Cotton,157,2021-02-03,4,63.24,14.94
+Adidas,Sweater,Blue,L,Cotton,32,2020-05-03,2,69.15,22.17
+Nike,Dress,Black,XS,Nylon,119,2021-05-06,1,82.74,41.48
+Reebok,Dress,Red,XL,Wool,149,2019-09-27,2,56.95,14.84
+Reebok,Jacket,Yellow,L,Silk,21,2020-09-25,3,34.54,9.68
+Reebok,Jacket,Blue,XL,Denim,171,2022-06-11,5,85.16,24.8
+Nike,Jeans,Black,XS,Nylon,145,2020-07-25,1,119.72,50.68
+Puma,Shoes,Green,L,Wool,129,2020-10-21,0,49.18,25.94
+Reebok,Sweater,Black,XS,Denim,36,2020-06-14,4,62.72,10.79
+New Balance,Shoes,Green,XS,Denim,58,2022-05-21,3,71.82,31.99
+Under Armour,Jacket,Black,XL,Polyester,192,2021-11-14,0,92.74,58.79
+Puma,Dress,Blue,XS,Wool,106,2022-10-29,4,93.93,38.47
+New Balance,Jacket,Yellow,S,Silk,110,2020-08-29,4,69.92,13.49
+Adidas,Jeans,Blue,M,Wool,92,2020-05-24,5,33.52,2.89
+Under Armour,Jacket,Black,L,Wool,97,2022-02-21,2,114.42,57.34
+Puma,Dress,Black,XL,Nylon,159,2021-12-23,3,114.86,46.48
+Nike,Jacket,Green,M,Silk,12,2022-07-12,2,112.91,60.94
+Under Armour,Jacket,Red,XL,Silk,18,2022-12-26,5,91.18,31.5
+Puma,Sweater,Blue,S,Cotton,20,2022-12-05,2,103.6,60.06
+Puma,Sweater,Green,XXL,Cotton,15,2023-03-17,3,51.57,27.21
+New Balance,Jeans,Black,M,Polyester,48,2020-11-29,3,66.24,19.74
+Puma,Jeans,Black,L,Polyester,176,2019-09-03,1,44.83,14.97
+Puma,Jacket,Red,XXL,Silk,110,2024-02-20,5,79.78,36.76
+Reebok,Sweater,Blue,XS,Denim,127,2023-08-10,3,24.21,13.74
+Under Armour,Sweater,Black,XXL,Denim,69,2023-03-16,2,45.59,27.69
+New Balance,Jacket,Yellow,XS,Wool,174,2022-03-03,3,40.89,17.33

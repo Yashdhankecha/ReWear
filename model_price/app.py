@@ -1,45 +1,63 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import pandas as pd
 import joblib
 
-# Load trained Ridge model pipeline
+app = Flask(__name__)
 model = joblib.load("ridge_model.pkl")
 
-app = Flask(__name__)
+# Dropdown options
+categories = ['Shirt', 'Jeans', 'Jacket', 'T-shirt', 'Sweater']
+colors = ['Black', 'White', 'Blue', 'Red', 'Green']
+sizes = ['XS', 'S', 'M', 'L', 'XL']
+materials = ['Cotton', 'Denim', 'Wool', 'Polyester', 'Linen']
+usage_levels = list(range(6))
 
-# Dropdown options based on dataset values
-brand_options = ['Zara', 'H&M', 'Gucci', 'Uniqlo', 'Levi\'s']
-category_options = ['Shirt', 'Jeans', 'Jacket', 'T-shirt', 'Sweater']
-color_options = ['Black', 'White', 'Blue', 'Red', 'Green']
-size_options = ['XS', 'S', 'M', 'L', 'XL']
-material_options = ['Cotton', 'Denim', 'Wool', 'Polyester', 'Linen']
-usage_options = list(range(0, 6))  # 0 to 5
-
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
 def index():
-    predicted_price = None
+    return render_template("form.html",
+                           categories=categories,
+                           colors=colors,
+                           sizes=sizes,
+                           materials=materials,
+                           usage_levels=usage_levels)
 
-    if request.method == "POST":
-        data = pd.DataFrame([{
-            "Brand": request.form["brand"],
-            "Category": request.form["category"],
-            "Color": request.form["color"],
-            "Size": request.form["size"],
-            "Material": request.form["material"],
-            "Original_Price": float(request.form["original_price"]),
-            "Usage_Level": int(request.form["usage_level"])
+INR_TO_USD = 83.0  # INR to USD conversion
+
+@app.route("/predict", methods=["POST"])
+def predict():
+    try:
+        data = request.get_json()
+
+        # Original price in INR
+        original_price_inr = float(data.get("original_price", 0))
+        original_price_usd = original_price_inr / INR_TO_USD
+
+        # Prepare data for model
+        df = pd.DataFrame([{
+            "Brand": data.get("brand", ""),
+            "Category": data.get("category", ""),
+            "Color": data.get("color", ""),
+            "Size": data.get("size", ""),
+            "Material": data.get("material", ""),
+            "Original_Price": original_price_usd,
+            "Usage_Level": int(data.get("usage_level", 0))
         }])
 
-        predicted_price = round(model.predict(data)[0], 2)
+        # Predict in USD
+        predicted_usd = model.predict(df)[0]
+        predicted_inr = predicted_usd * INR_TO_USD
 
-    return render_template("form.html",
-                           predicted_price=predicted_price,
-                           brands=brand_options,
-                           categories=category_options,
-                           colors=color_options,
-                           sizes=size_options,
-                           materials=material_options,
-                           usages=usage_options)
+        # Final logic: resale price checks
+        if predicted_inr <= 0:
+            return jsonify({"predicted_price": "❌ Item not in condition to sell"})
+        elif predicted_inr > original_price_inr:
+            predicted_inr = original_price_inr
+
+        return jsonify({"predicted_price": f"₹{round(predicted_inr, 2)}"})
+
+    except Exception as e:
+        return jsonify({"predicted_price": f"Error: {str(e)}"})
+
 
 if __name__ == "__main__":
     app.run(debug=True)
