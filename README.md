@@ -1,3 +1,18 @@
+Team name: NextGen
+
+Team members:
+Desai karansinh: karansinhdesai04@gmail.com
+Yash ketanbhai Dhankecha: ydhankecha@gmail.com
+Harsh vyas: harshvyas4567harsh@gmail.com
+Asad Ahmed Saiyed: asadahmedsaiyed786@gmail.com
+
+Problem Statement:
+ReWear - community clothing exchange
+
+
+
+
+
 # ReWear - Sustainable Fashion Marketplace
 
 A full-stack MERN application for sustainable fashion trading, where users can buy, sell, and swap pre-loved clothing items using a points-based system.
