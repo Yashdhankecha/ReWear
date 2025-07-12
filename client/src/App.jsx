@@ -21,6 +21,7 @@ import About from './pages/About';
 import Community from './pages/Community';
 import ProductDetail from './pages/ProductDetail';
 import Notifications from './pages/Notifications';
+import TestBuySell from './pages/TestBuySell';
 
 // Styles - Now using Tailwind CSS via CDN
 
@@ -51,6 +52,7 @@ function App() {
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/auth/google-callback" element={<GoogleCallback />} />
             <Route path="/browse" element={<BrowseItems />} />
+            <Route path="/test-buy-sell" element={<TestBuySell />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/community" element={<Community />} />

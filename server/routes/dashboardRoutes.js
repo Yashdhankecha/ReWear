@@ -3,6 +3,7 @@ const Item = require('../models/Item');
 const Transaction = require('../models/Transaction');
 const { protect } = require('../middleware/auth');
 const router = express.Router();
+const User = require('../models/User');
 
 router.get('/overview', async (req, res) => {
   try {
@@ -584,6 +585,422 @@ router.post('/seed', async (req, res) => {
     res.json({ success: true, message: 'Dummy items seeded.' });
   } catch (err) {
     res.status(500).json({ error: 'Seeding failed' });
+  }
+});
+
+// Test endpoint to create sample items for testing buy/sell system
+router.post('/test/setup-buy-sell', async (req, res) => {
+  try {
+    // First, let's create or find the test users
+    let sellerUser = await User.findOne({ email: 'yashdhankecha8@gmail.com' });
+    if (!sellerUser) {
+      sellerUser = new User({
+        name: 'Yash Dhankecha',
+        email: 'yashdhankecha8@gmail.com',
+        password: 'Test123!',
+        isEmailVerified: true
+      });
+      await sellerUser.save();
+    }
+    
+    // Create a test buyer user
+    let buyerUser = await User.findOne({ email: 'testbuyer@example.com' });
+    if (!buyerUser) {
+      buyerUser = new User({
+        name: 'Test Buyer',
+        email: 'testbuyer@example.com',
+        password: 'Test123!',
+        isEmailVerified: true
+      });
+      await buyerUser.save();
+    }
+    
+    // Create sample items for the seller
+    const sampleItems = [
+      {
+        title: 'Vintage Denim Jacket',
+        description: 'Classic blue denim jacket with a vintage wash, perfect for casual wear.',
+        size: 'M',
+        color: 'Blue',
+        brand: 'Levi\'s',
+        points: 120,
+        status: 'approved',
+        flagged: false,
+        images: ['https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=400&h=400&fit=crop'],
+        category: 'Outerwear',
+        condition: 'Like New',
+        user: sellerUser._id,
+      },
+      {
+        title: 'Summer Floral Dress',
+        description: 'Lightweight dress with a colorful floral pattern, perfect for summer.',
+        size: 'S',
+        color: 'Multicolor',
+        brand: 'H&M',
+        points: 95,
+        status: 'approved',
+        flagged: false,
+        images: ['https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=400&fit=crop'],
+        category: 'Dresses',
+        condition: 'Good',
+        user: sellerUser._id,
+      },
+      {
+        title: 'Designer Sneakers',
+        description: 'Trendy white sneakers, gently used but in excellent condition.',
+        size: '9',
+        color: 'White',
+        brand: 'Nike',
+        points: 150,
+        status: 'approved',
+        flagged: false,
+        images: ['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop'],
+        category: 'Shoes',
+        condition: 'Like New',
+        user: sellerUser._id,
+      }
+    ];
+    
+    // Clear existing test items and add new ones
+    await Item.deleteMany({ user: sellerUser._id });
+    const createdItems = await Item.insertMany(sampleItems);
+    
+    res.json({ 
+      success: true, 
+      message: 'Test setup completed',
+      seller: {
+        email: sellerUser.email,
+        name: sellerUser.name,
+        id: sellerUser._id
+      },
+      buyer: {
+        email: buyerUser.email,
+        name: buyerUser.name,
+        id: buyerUser._id
+      },
+      itemsCreated: sampleItems.length
+    });
+  } catch (err) {
+    console.error('Error setting up test data:', err);
+    res.status(500).json({ error: 'Failed to setup test data' });
+  }
+});
+
+// Add sample buy/sell transaction data
+router.post('/test/add-transaction-data', async (req, res) => {
+  try {
+    const Transaction = require('../models/Transaction');
+    
+    // Find the test users
+    const sellerUser = await User.findOne({ email: 'yashdhankecha8@gmail.com' });
+    const buyerUser = await User.findOne({ email: 'testbuyer@example.com' });
+    
+    if (!sellerUser || !buyerUser) {
+      return res.status(400).json({ error: 'Test users not found. Please run setup first.' });
+    }
+    
+    // Get items owned by the seller
+    const sellerItems = await Item.find({ user: sellerUser._id });
+    
+    if (sellerItems.length === 0) {
+      return res.status(400).json({ error: 'No items found for seller. Please run setup first.' });
+    }
+    
+    // Create sample transactions
+    const sampleTransactions = [
+      {
+        item: sellerItems[0]._id,
+        buyer: buyerUser._id,
+        seller: sellerUser._id,
+        offerAmount: 110,
+        status: 'pending',
+        type: 'offer',
+        message: 'Hi! I really like this jacket. Would you consider selling it for 110 points?',
+        createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000) // 2 days ago
+      },
+      {
+        item: sellerItems[1]._id,
+        buyer: buyerUser._id,
+        seller: sellerUser._id,
+        offerAmount: 90,
+        status: 'accepted',
+        type: 'offer',
+        message: 'This dress is perfect for my summer vacation! Can I offer 90 points?',
+        createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000) // 5 days ago
+      },
+      {
+        item: sellerItems[2]._id,
+        buyer: buyerUser._id,
+        seller: sellerUser._id,
+        offerAmount: 150,
+        status: 'rejected',
+        type: 'buy',
+        message: 'I\'ll buy these sneakers for the full price!',
+        createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000) // 1 day ago
+      },
+      {
+        item: sellerItems[0]._id,
+        buyer: buyerUser._id,
+        seller: sellerUser._id,
+        offerAmount: 125,
+        status: 'completed',
+        type: 'buy',
+        message: 'I love this jacket! Buying it now.',
+        createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) // 7 days ago
+      },
+      {
+        item: sellerItems[1]._id,
+        buyer: buyerUser._id,
+        seller: sellerUser._id,
+        offerAmount: 85,
+        status: 'pending',
+        type: 'offer',
+        message: 'Would you accept 85 points for the dress? I can pick it up today.',
+        createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000) // 3 days ago
+      }
+    ];
+    
+    // Clear existing test transactions and add new ones
+    await Transaction.deleteMany({
+      $or: [
+        { buyer: buyerUser._id },
+        { seller: sellerUser._id }
+      ]
+    });
+    
+    const createdTransactions = await Transaction.insertMany(sampleTransactions);
+    
+    res.json({ 
+      success: true, 
+      message: 'Transaction data added successfully',
+      transactionsCreated: createdTransactions.length,
+      transactions: createdTransactions.map(t => ({
+        id: t._id,
+        itemTitle: sellerItems.find(item => item._id.toString() === t.item.toString())?.title,
+        status: t.status,
+        type: t.type,
+        offerAmount: t.offerAmount,
+        message: t.message,
+        createdAt: t.createdAt
+      }))
+    });
+  } catch (err) {
+    console.error('Error adding transaction data:', err);
+    res.status(500).json({ error: 'Failed to add transaction data' });
+  }
+});
+
+// Create additional test users and diverse transaction scenarios
+router.post('/test/create-diverse-data', async (req, res) => {
+  try {
+    const Transaction = require('../models/Transaction');
+    
+    // Create additional test users
+    const additionalUsers = [
+      {
+        name: 'Sarah Johnson',
+        email: 'sarah.johnson@example.com',
+        password: 'Test123!',
+        isEmailVerified: true
+      },
+      {
+        name: 'Mike Chen',
+        email: 'mike.chen@example.com',
+        password: 'Test123!',
+        isEmailVerified: true
+      },
+      {
+        name: 'Emma Davis',
+        email: 'emma.davis@example.com',
+        password: 'Test123!',
+        isEmailVerified: true
+      }
+    ];
+    
+    // Create or find these users
+    const createdUsers = [];
+    for (const userData of additionalUsers) {
+      let user = await User.findOne({ email: userData.email });
+      if (!user) {
+        user = new User(userData);
+        await user.save();
+      }
+      createdUsers.push(user);
+    }
+    
+    // Create additional items for different users
+    const additionalItems = [
+      {
+        title: 'Leather Handbag',
+        description: 'Elegant brown leather handbag, perfect for professional settings.',
+        size: 'One Size',
+        color: 'Brown',
+        brand: 'Coach',
+        points: 180,
+        status: 'approved',
+        flagged: false,
+        images: ['https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=400&fit=crop'],
+        category: 'Accessories',
+        condition: 'Like New',
+        user: createdUsers[0]._id,
+      },
+      {
+        title: 'Casual T-Shirt',
+        description: 'Comfortable cotton t-shirt with a simple design.',
+        size: 'L',
+        color: 'White',
+        brand: 'Uniqlo',
+        points: 45,
+        status: 'approved',
+        flagged: false,
+        images: ['https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop'],
+        category: 'Tops',
+        condition: 'Good',
+        user: createdUsers[1]._id,
+      },
+      {
+        title: 'Formal Blazer',
+        description: 'Professional black blazer for business meetings.',
+        size: 'M',
+        color: 'Black',
+        brand: 'Zara',
+        points: 200,
+        status: 'approved',
+        flagged: false,
+        images: ['https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=400&fit=crop'],
+        category: 'Outerwear',
+        condition: 'New',
+        user: createdUsers[2]._id,
+      }
+    ];
+    
+    // Add these items to the database
+    const createdItems = await Item.insertMany(additionalItems);
+    
+    // Create diverse transaction scenarios
+    const diverseTransactions = [
+      // Transactions involving the original test users
+      {
+        item: createdItems[0]._id,
+        buyer: createdUsers[1]._id,
+        seller: createdUsers[0]._id,
+        offerAmount: 170,
+        status: 'pending',
+        type: 'offer',
+        message: 'This bag would be perfect for my work! Can we negotiate the price?',
+        createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000)
+      },
+      {
+        item: createdItems[1]._id,
+        buyer: createdUsers[2]._id,
+        seller: createdUsers[1]._id,
+        offerAmount: 40,
+        status: 'accepted',
+        type: 'offer',
+        message: 'I need a casual shirt for the weekend. Is 40 points okay?',
+        createdAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000)
+      },
+      {
+        item: createdItems[2]._id,
+        buyer: createdUsers[0]._id,
+        seller: createdUsers[2]._id,
+        offerAmount: 200,
+        status: 'completed',
+        type: 'buy',
+        message: 'Perfect for my job interview next week!',
+        createdAt: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000)
+      },
+      // Cross-user transactions
+      {
+        item: createdItems[0]._id,
+        buyer: createdUsers[2]._id,
+        seller: createdUsers[0]._id,
+        offerAmount: 175,
+        status: 'rejected',
+        type: 'offer',
+        message: 'I love this bag! Would you consider 175 points?',
+        createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000)
+      },
+      {
+        item: createdItems[1]._id,
+        buyer: createdUsers[0]._id,
+        seller: createdUsers[1]._id,
+        offerAmount: 50,
+        status: 'pending',
+        type: 'offer',
+        message: 'This shirt looks great! Can I offer 50 points?',
+        createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000)
+      }
+    ];
+    
+    // Add these transactions
+    const createdTransactions = await Transaction.insertMany(diverseTransactions);
+    
+    res.json({ 
+      success: true, 
+      message: 'Diverse test data created successfully',
+      usersCreated: createdUsers.length,
+      itemsCreated: createdItems.length,
+      transactionsCreated: createdTransactions.length,
+      users: createdUsers.map(u => ({ name: u.name, email: u.email })),
+      items: createdItems.map(i => ({ title: i.title, points: i.points })),
+      transactions: createdTransactions.map(t => ({
+        status: t.status,
+        type: t.type,
+        offerAmount: t.offerAmount
+      }))
+    });
+  } catch (err) {
+    console.error('Error creating diverse data:', err);
+    res.status(500).json({ error: 'Failed to create diverse data' });
+  }
+});
+
+// Add dummy bought products for yashdhankecha8@gmail.com
+router.post('/test/add-bought-products', async (req, res) => {
+  try {
+    const Transaction = require('../models/Transaction');
+    const sellerUser = await User.findOne({ email: 'yashdhankecha8@gmail.com' });
+    if (!sellerUser) {
+      return res.status(400).json({ error: 'Seller user not found.' });
+    }
+
+    // Find a few items NOT owned by yashdhankecha8@gmail.com
+    const items = await Item.find({ user: { $ne: sellerUser._id } }).limit(3);
+    if (items.length === 0) {
+      return res.status(400).json({ error: 'No items found not owned by the user.' });
+    }
+
+    // For each item, create a transaction where yashdhankecha8@gmail.com is the buyer and status is accepted/completed
+    const transactions = [];
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      const status = i % 2 === 0 ? 'accepted' : 'completed';
+      const type = i % 2 === 0 ? 'buy' : 'offer';
+      transactions.push({
+        item: item._id,
+        buyer: sellerUser._id,
+        seller: item.user,
+        offerAmount: item.points,
+        status,
+        type,
+        message: `Test bought product #${i + 1}`,
+        createdAt: new Date(Date.now() - (i + 1) * 24 * 60 * 60 * 1000)
+      });
+    }
+
+    // Insert transactions
+    await Transaction.insertMany(transactions);
+
+    res.json({
+      success: true,
+      message: 'Dummy bought products added for yashdhankecha8@gmail.com',
+      transactionsCreated: transactions.length,
+      items: items.map(item => ({ title: item.title, id: item._id }))
+    });
+  } catch (err) {
+    console.error('Error adding bought products:', err);
+    res.status(500).json({ error: 'Failed to add bought products' });
   }
 });
 
