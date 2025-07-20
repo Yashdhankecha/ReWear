@@ -20,6 +20,10 @@ const transactionSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  coinReward: {
+    type: Number,
+    default: 0
+  },
   status: {
     type: String,
     enum: ['pending', 'accepted', 'rejected', 'completed'],

@@ -6,7 +6,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
+  width: screen;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +28,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
 }
 
 h1 {
@@ -132,4 +134,9 @@ button:focus-visible {
       opacity: 0.7;
     }
   }
+}
+
+/* Hide vertical scrollbar for all pages */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

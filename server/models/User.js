@@ -79,7 +79,7 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['user', 'admin'],
+    enum: ['user', 'admin', 'owner'],
     default: 'user'
   },
   isActive: {
@@ -88,6 +88,10 @@ const userSchema = new mongoose.Schema({
   },
   lastLogin: {
     type: Date
+  },
+  coinBalance: {
+    type: Number,
+    default: 0
   }
 }, {
   timestamps: true

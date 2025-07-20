@@ -116,6 +116,72 @@ export const authAPI = {
   logout: async () => {
     const response = await api.post('/logout');
     return response.data;
+  },
+
+  // Owner: Get platform statistics
+  getPlatformStats: async () => {
+    const response = await api.get('/platform-stats');
+    return response.data;
+  },
+
+  // Owner: Get detailed analytics
+  getOwnerAnalytics: async () => {
+    const response = await api.get('/owner-analytics');
+    return response.data;
+  },
+
+  // Owner: Get analytics by custom date range
+  getAnalyticsByDateRange: async (from, to) => {
+    const response = await api.get(`/owner-analytics/date-range?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`);
+    return response.data;
+  },
+
+  // Owner: Get retention/churn analytics
+  getRetentionAnalytics: async () => {
+    const response = await api.get('/owner-analytics/retention');
+    return response.data;
+  },
+
+  // Owner: Get cohort analysis
+  getCohortAnalytics: async () => {
+    const response = await api.get('/owner-analytics/cohort');
+    return response.data;
+  },
+
+  // Owner: Get funnel analysis
+  getFunnelAnalytics: async () => {
+    const response = await api.get('/owner-analytics/funnel');
+    return response.data;
+  },
+
+  // Owner: Get all platform transactions
+  getOwnerTransactions: async () => {
+    const response = await api.get('/owner-transactions');
+    return response.data;
+  },
+
+  // Owner: Get platform revenue/fees
+  getOwnerRevenue: async () => {
+    const response = await api.get('/owner-revenue');
+    return response.data;
+  },
+
+  // Owner: Get platform payouts
+  getOwnerPayouts: async () => {
+    const response = await api.get('/owner-payouts');
+    return response.data;
+  },
+
+  // Owner: Get platform refunds/disputes
+  getOwnerRefunds: async () => {
+    const response = await api.get('/owner-refunds');
+    return response.data;
+  },
+
+  // Owner: Get audit logs
+  getOwnerAuditLogs: async () => {
+    const response = await api.get('/owner-audit-logs');
+    return response.data;
   }
 };
 
@@ -138,6 +204,20 @@ export const dashboardAPI = {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     });
+    return response.data;
+  }
+};
+
+// User management API functions
+export const userAPI = {
+  // Get all users (admin only)
+  getAllUsers: async () => {
+    const response = await api.get('/users');
+    return response.data;
+  },
+  // Update user role (admin only)
+  updateUserRole: async (userId, role) => {
+    const response = await api.put(`/user/${userId}/role`, { role });
     return response.data;
   }
 };

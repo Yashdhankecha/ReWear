@@ -2,34 +2,88 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import toast from 'react-hot-toast';
+
+// Create axios instance for dashboard API calls
+const dashboardAPI = axios.create({
+  baseURL: 'http://localhost:5000/api/dashboard',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+// Add request interceptor to include auth token
+dashboardAPI.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Create axios instance for notifications API calls
+const notificationAPI = axios.create({
+  baseURL: 'http://localhost:5000/api/notifications',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+// Add request interceptor to include auth token
+notificationAPI.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, isAuthenticated } = useAuth();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
   const [selectedImage, setSelectedImage] = useState(0);
   const [isImageZoomed, setIsImageZoomed] = useState(false);
   const [showBuyModal, setShowBuyModal] = useState(false);
   const [showSellModal, setShowSellModal] = useState(false);
-  const [successMessage, setSuccessMessage] = useState('');
   const [offerAmount, setOfferAmount] = useState('');
   const [buyMessage, setBuyMessage] = useState('');
   const [offerMessage, setOfferMessage] = useState('');
+
+  // Role-based redirect: only 'user' role allowed
+  if (isAuthenticated && user?.role !== 'user') {
+    if (user?.role === 'admin') {
+      navigate('/admin/dashboard', { replace: true });
+      return null;
+    }
+    return null;
+  }
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
         console.log('Fetching product with ID:', id);
-        const response = await axios.get(`/api/dashboard/items/${id}`);
+        const response = await dashboardAPI.get(`/items/${id}`);
         console.log('Product response:', response.data);
         setProduct(response.data.data);
       } catch (err) {
         console.error('Error fetching product:', err.response || err);
-        setError('Failed to load product details');
+        toast.error('Failed to load product details');
       } finally {
         setLoading(false);
       }
@@ -58,33 +112,61 @@ const ProductDetail = () => {
 
   const confirmBuy = async () => {
     try {
-      const response = await axios.post(`/api/dashboard/items/${id}/buy`, {
+      const response = await dashboardAPI.post(`/items/${id}/buy`, {
         message: buyMessage
       });
       setShowBuyModal(false);
-      setSuccessMessage('Purchase request sent to seller!');
-      setTimeout(() => setSuccessMessage(''), 3000);
+      toast.success('Purchase request sent to seller! You will be notified when the seller responds.');
+      
+      // Add notification for the buyer
+      try {
+        await notificationAPI.post('', {
+          recipient: user.id,
+          sender: user.id,
+          type: 'purchase_sent',
+          title: 'Purchase Request Sent',
+          message: `Your purchase request for "${product.title}" has been sent to the seller.`,
+          relatedItem: id,
+          relatedTransaction: response.data.transaction._id
+        });
+      } catch (notifErr) {
+        console.error('Failed to create notification:', notifErr);
+      }
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to process purchase');
+      toast.error(err.response?.data?.error || 'Failed to process purchase');
     }
   };
 
   const confirmSell = async () => {
     try {
       if (!offerAmount || offerAmount <= 0) {
-        setError('Please enter a valid offer amount');
+        toast.error('Please enter a valid offer amount');
         return;
       }
       
-      const response = await axios.post(`/api/dashboard/items/${id}/offer`, {
+      const response = await dashboardAPI.post(`/items/${id}/offer`, {
         offerAmount: parseInt(offerAmount),
         message: offerMessage
       });
       setShowSellModal(false);
-      setSuccessMessage('Offer sent to seller!');
-      setTimeout(() => setSuccessMessage(''), 3000);
+      toast.success('Offer sent to seller! You will be notified when the seller responds.');
+      
+      // Add notification for the buyer
+      try {
+        await notificationAPI.post('', {
+          recipient: user.id,
+          sender: user.id,
+          type: 'offer_sent',
+          title: 'Offer Sent',
+          message: `Your offer of ₹${offerAmount} for "${product.title}" has been sent to the seller.`,
+          relatedItem: id,
+          relatedTransaction: response.data.transaction._id
+        });
+      } catch (notifErr) {
+        console.error('Failed to create notification:', notifErr);
+      }
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to process offer');
+      toast.error(err.response?.data?.error || 'Failed to process offer');
     }
   };
 
@@ -99,13 +181,13 @@ const ProductDetail = () => {
     );
   }
 
-  if (error || !product) {
+  if (!product) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 flex items-center justify-center">
         <div className="text-center">
           <div className="text-6xl mb-4">❌</div>
           <h3 className="text-2xl font-semibold text-white mb-2">Product Not Found</h3>
-          <p className="text-slate-400 mb-6">{error || 'The product you are looking for does not exist.'}</p>
+          <p className="text-slate-400 mb-6">The product you are looking for does not exist.</p>
           <button
             onClick={() => navigate('/browse')}
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
@@ -119,11 +201,6 @@ const ProductDetail = () => {
 
   return (
     <div style={{ width: '100vw', minHeight: '100vh', overflowX: 'hidden' }}>
-      {successMessage && (
-        <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in">
-          {successMessage}
-        </div>
-      )}
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 py-12 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Back Button */}
@@ -202,10 +279,22 @@ const ProductDetail = () => {
                 </div>
               </div>
 
-              {/* Price */}
+              {/* Price and Coin Reward */}
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-600">
-                <div className="text-3xl font-bold text-blue-400 mb-2">{product.points} points</div>
-                <div className="text-slate-400">Estimated value</div>
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <div className="text-3xl font-bold text-green-400 mb-1">₹{product.price}</div>
+                    <div className="text-slate-400">Price</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-xl font-bold text-yellow-400 mb-1">+{product.coinReward || 0}</div>
+                    <div className="text-slate-400 text-sm">Coins earned</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-slate-300 text-sm">
+                  <span>💡</span>
+                  <span>Earn coins on this purchase to redeem for discount coupons!</span>
+                </div>
               </div>
 
               {/* Description */}
@@ -244,6 +333,25 @@ const ProductDetail = () => {
                 </div>
               </div>
 
+              {/* Coin Reward System Info */}
+              <div className="bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-sm rounded-xl p-6 border border-yellow-500/30">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">🪙</span>
+                  <h3 className="text-lg font-semibold text-white">Coin Reward System</h3>
+                </div>
+                <div className="space-y-2 text-sm text-slate-300">
+                  <p>• Earn <span className="text-yellow-400 font-semibold">{product.coinReward || 0} coins</span> on this purchase</p>
+                  <p>• Redeem coins for discount coupons in the Redemption section</p>
+                  <p>• Coins can be used for 10% off, 20% off, or fixed ₹100/₹200 discounts</p>
+                </div>
+                <button
+                  onClick={() => navigate('/redemption')}
+                  className="mt-4 bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  View Redemption Options →
+                </button>
+              </div>
+
               {/* Action Buttons */}
               <div className="flex gap-4 pt-6">
                 <button
@@ -268,8 +376,21 @@ const ProductDetail = () => {
           <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
             <div className="bg-slate-800 rounded-2xl p-8 max-w-md w-full mx-4">
               <h3 className="text-2xl font-bold text-white mb-4">Confirm Purchase</h3>
+              <div className="bg-slate-700/50 rounded-lg p-4 mb-4">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-slate-300">Price:</span>
+                  <span className="text-green-400 font-bold">₹{product.price}</span>
+                </div>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-slate-300">Coins earned:</span>
+                  <span className="text-yellow-400 font-bold">+{product.coinReward || 0}</span>
+                </div>
+                <div className="text-xs text-slate-400 mt-2">
+                  💡 You'll earn coins that can be redeemed for discount coupons!
+                </div>
+              </div>
               <p className="text-slate-300 mb-4">
-                Are you sure you want to buy "{product.title}" for {product.points} points?
+                Are you sure you want to buy "{product.title}" for ₹{product.price}?
               </p>
               <textarea
                 placeholder="Add a message to the seller (optional)"
@@ -301,12 +422,22 @@ const ProductDetail = () => {
           <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
             <div className="bg-slate-800 rounded-2xl p-8 max-w-md w-full mx-4">
               <h3 className="text-2xl font-bold text-white mb-4">Make an Offer</h3>
+              <div className="bg-slate-700/50 rounded-lg p-4 mb-4">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-slate-300">Current price:</span>
+                  <span className="text-green-400 font-bold">₹{product.price}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-300">Coins earned:</span>
+                  <span className="text-yellow-400 font-bold">+{product.coinReward || 0}</span>
+                </div>
+              </div>
               <p className="text-slate-300 mb-4">
-                Enter your offer for "{product.title}" (current price: {product.points} points)
+                Enter your offer for "{product.title}" (current price: ₹{product.price})
               </p>
               <input
                 type="number"
-                placeholder="Your offer in points"
+                placeholder="Your offer in ₹"
                 value={offerAmount}
                 onChange={(e) => setOfferAmount(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg bg-slate-700 text-white border border-slate-600 focus:ring-2 focus:ring-blue-500 mb-4"

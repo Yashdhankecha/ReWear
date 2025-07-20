@@ -9,7 +9,7 @@ JWT_SECRET=d0a6b2776067d5723b6725d97d8440b0edf83db69ef36ec074a71b845264bd4853c1e
 JWT_EXPIRE=7d
 
 # Database Configuration
-MONGODB_URI=mongodb://localhost:27017/mern-auth-app
+MONGODB_URI=mongodb://localhost:27017/rewear
 
 # Email Configuration (for production)
 SMTP_HOST=smtp.gmail.com

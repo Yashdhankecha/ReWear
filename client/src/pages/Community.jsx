@@ -15,6 +15,7 @@ const Community = () => {
   const [input, setInput] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(12); // Show 12 at first
 
   // Typewriter effect state
   const [typewriterText, setTypewriterText] = useState('');
@@ -44,6 +45,34 @@ const Community = () => {
     // eslint-disable-next-line
   }, [typewriterIndex]);
 
+  // Shuffle and persist order in sessionStorage
+  useEffect(() => {
+    if (thoughts.length > 0) {
+      const sessionKey = 'communityThoughtsOrder';
+      let order = sessionStorage.getItem(sessionKey);
+      let shuffled;
+      if (order) {
+        // Use saved order
+        const ids = JSON.parse(order);
+        // Map ids to thoughts (filter in case of new/deleted)
+        shuffled = ids.map(id => thoughts.find(t => (t._id || t.id) === id)).filter(Boolean);
+        // Add any new thoughts not in saved order
+        const missing = thoughts.filter(t => !ids.includes(t._id || t.id));
+        shuffled = [...missing, ...shuffled];
+      } else {
+        // Shuffle and save order
+        shuffled = [...thoughts];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        sessionStorage.setItem(sessionKey, JSON.stringify(shuffled.map(t => t._id || t.id)));
+      }
+      setThoughts(shuffled);
+    }
+    // eslint-disable-next-line
+  }, [loading]);
+
   // Fetch thoughts from backend
   useEffect(() => {
     const fetchThoughts = async () => {
@@ -69,8 +98,16 @@ const Community = () => {
         user: user?.name || 'Anonymous',
         text: input
       });
-      setThoughts([res.data.thought, ...thoughts]);
+      // Insert new thought at the start and update session order
+      const newThought = res.data.thought;
+      const sessionKey = 'communityThoughtsOrder';
+      let order = sessionStorage.getItem(sessionKey);
+      let ids = order ? JSON.parse(order) : [];
+      ids.unshift(newThought._id || newThought.id);
+      sessionStorage.setItem(sessionKey, JSON.stringify(ids));
+      setThoughts([newThought, ...thoughts]);
       setInput('');
+      setVisibleCount((prev) => prev + 1); // Show the new thought
     } catch (err) {
       alert('Failed to post thought');
     }
@@ -79,7 +116,7 @@ const Community = () => {
 
   return (
     <div
-      style={{ width: '100vw', minHeight: '100vh', overflowX: 'hidden' }}
+      style={{ width: '100vw', minHeight: '100vh', overflowX: 'hidden' ,margin: '2vw 0vw'}}
     >
       {/* Animated Header */}
       <div className="w-full text-center mb-10">
@@ -119,19 +156,31 @@ const Community = () => {
             <p className="text-slate-400">Loading community thoughts...</p>
           </div>
         ) : thoughts.length > 0 ? (
-          thoughts.map((thought, idx) => (
-            <div
-              key={thought._id || thought.id}
-              className={`bg-slate-800 border border-slate-700 rounded-xl px-6 py-4 shadow-sm flex flex-col gap-1 animate-fade-in ${idx === 0 && submitting ? 'opacity-50' : 'opacity-100'}`}
-              style={{ animationDelay: `${idx * 60}ms` }}
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <span className="font-bold text-blue-400">{thought.user}</span>
-                <span className="text-xs text-slate-400">{new Date(thought.createdAt).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' })}</span>
+          <>
+            {thoughts.slice(0, visibleCount).map((thought, idx) => (
+              <div
+                key={thought._id || thought.id}
+                className={`bg-slate-800 border border-slate-700 rounded-xl px-6 m-3 py-4 shadow-sm flex flex-col gap-1 animate-fade-in ${idx === 0 && submitting ? 'opacity-50' : 'opacity-100'}`}
+                style={{ animationDelay: `${idx * 60}ms` }}
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="font-bold text-blue-400">{thought.user}</span>
+                  <span className="text-xs text-slate-400">{new Date(thought.createdAt).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' })}</span>
+                </div>
+                <p className="text-slate-100 text-base break-words">{thought.text}</p>
               </div>
-              <p className="text-slate-100 text-base break-words">{thought.text}</p>
-            </div>
-          ))
+            ))}
+            {visibleCount < thoughts.length && (
+              <div className="col-span-full flex justify-center mt-4">
+                <button
+                  className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-md hover:from-blue-700 hover:to-purple-700 transition-all duration-200"
+                  onClick={() => setVisibleCount((prev) => prev + 12)}
+                >
+                  Read More
+                </button>
+              </div>
+            )}
+          </>
         ) : (
           <div className="col-span-full text-center py-8">
             <div className="w-16 h-16 bg-slate-700/50 rounded-full flex items-center justify-center mx-auto mb-4">

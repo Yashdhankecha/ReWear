@@ -6,7 +6,8 @@ const ItemSchema = new mongoose.Schema({
   size: { type: String, required: true },
   color: { type: String },
   brand: { type: String },
-  points: { type: Number, required: true },
+  price: { type: Number, required: true }, // Price in INR
+  coinReward: { type: Number, default: 0 }, // Coins earned from this transaction
   status: { type: String, enum: ['pending', 'approved', 'swapped'], default: 'pending' },
   flagged: { type: Boolean, default: false },
   images: [{ type: String }],
@@ -14,6 +15,7 @@ const ItemSchema = new mongoose.Schema({
   condition: { type: String, enum: ['New', 'Like New', 'Good', 'Fair'], required: true },
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   createdAt: { type: Date, default: Date.now },
+  views: { type: Number, default: 0 },
 });
 
 module.exports = mongoose.model('Item', ItemSchema); 

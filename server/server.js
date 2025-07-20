@@ -12,6 +12,8 @@ require('./config/passport');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 const authRoutes = require('./routes/authRoutes');
 const communityRoutes = require('./routes/communityRoutes');
+const coinRoutes = require('./routes/coinRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 
 // Import middleware
 const errorHandler = require('./middleware/errorHandler');
@@ -44,6 +46,8 @@ app.use('/api/dashboard', dashboardRoutes);
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/community', communityRoutes);
+app.use('/api/coins', coinRoutes);
+app.use('/api/notifications', notificationRoutes);
 
 // Health check route
 app.get('/api/health', (req, res) => {

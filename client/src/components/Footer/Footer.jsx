@@ -60,7 +60,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="text-center text-slate-500 text-sm mt-8 border-t border-slate-800 pt-4">
-      © 2025 ReWear. All rights reserved.
+      © 2025 ReWear. All rights reserved to tripod developers.
     </div>
   </footer>
 );

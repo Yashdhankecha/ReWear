@@ -11,9 +11,22 @@ const {
   resetPassword,
   getProfile,
   updateProfile,
-  logout
+  logout,
+  updateUserRole,
+  getAllUsers,
+  getPlatformStats,
+  getOwnerAnalytics,
+  getAnalyticsByDateRange,
+  getRetentionAnalytics,
+  getCohortAnalytics,
+  getFunnelAnalytics,
+  getOwnerAuditLogs,
+  getOwnerRefunds,
+  getOwnerTransactions,
+  getOwnerRevenue,
+  getOwnerPayouts
 } = require('../controllers/authController');
-const { protect } = require('../middleware/auth');
+const { protect, authorize } = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -185,6 +198,39 @@ router.get('/google/callback',
 router.get('/profile', protect, getProfile);
 router.put('/profile', protect, updateProfileValidation, updateProfile);
 router.post('/logout', protect, logout);
+
+// Admin: Update user role
+router.put('/user/:id/role', protect, authorize('admin'), updateUserRole);
+
+// Admin: Get all users
+router.get('/users', protect, authorize('admin'), getAllUsers);
+
+// Owner: Get platform statistics
+router.get('/platform-stats', protect, authorize('owner'), getPlatformStats);
+
+// Owner: Get detailed analytics
+router.get('/owner-analytics', protect, authorize('owner'), getOwnerAnalytics);
+
+// Owner: Get analytics by custom date range
+router.get('/owner-analytics/date-range', protect, authorize('owner'), getAnalyticsByDateRange);
+// Owner: Get retention/churn analytics
+router.get('/owner-analytics/retention', protect, authorize('owner'), getRetentionAnalytics);
+// Owner: Get cohort analysis
+router.get('/owner-analytics/cohort', protect, authorize('owner'), getCohortAnalytics);
+// Owner: Get funnel analysis
+router.get('/owner-analytics/funnel', protect, authorize('owner'), getFunnelAnalytics);
+
+// Owner: Get audit logs
+router.get('/owner-audit-logs', protect, authorize('owner'), getOwnerAuditLogs);
+
+// Owner: Get all platform transactions
+router.get('/owner-transactions', protect, authorize('owner'), getOwnerTransactions);
+// Owner: Get platform revenue/fees
+router.get('/owner-revenue', protect, authorize('owner'), getOwnerRevenue);
+// Owner: Get platform payouts
+router.get('/owner-payouts', protect, authorize('owner'), getOwnerPayouts);
+// Owner: Get platform refunds/disputes
+router.get('/owner-refunds', protect, authorize('owner'), getOwnerRefunds);
 
 // DEV ONLY: Insert dummy users and list all users
 if (process.env.NODE_ENV === 'development') {

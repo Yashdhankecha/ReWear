@@ -111,6 +111,9 @@ export const AuthProvider = ({ children }) => {
               token
             }
           });
+
+          // Store user in localStorage for role-based redirect
+          localStorage.setItem('user', JSON.stringify(response.data.data.user));
         } catch (error) {
           console.error('Failed to load user:', error);
           localStorage.removeItem('token');
@@ -148,6 +151,9 @@ export const AuthProvider = ({ children }) => {
         type: AUTH_ACTIONS.LOGIN_SUCCESS,
         payload: { user, token }
       });
+
+      // Store user in localStorage for role-based redirect
+      localStorage.setItem('user', JSON.stringify(user));
 
       // Add a small delay to ensure state is updated
       await new Promise(resolve => setTimeout(resolve, 100));
@@ -291,6 +297,8 @@ export const AuthProvider = ({ children }) => {
       console.error('Logout error:', error);
     } finally {
       dispatch({ type: AUTH_ACTIONS.LOGOUT });
+      // Remove user from localStorage on logout
+      localStorage.removeItem('user');
     }
   };
 

@@ -34,8 +34,8 @@ router.get('/items', async (req, res) => {
       category, 
       status, 
       condition, 
-      minPoints, 
-      maxPoints,
+      minPrice, 
+      maxPrice,
       search,
       sortBy = 'createdAt',
       sortOrder = 'desc'
@@ -46,10 +46,10 @@ router.get('/items', async (req, res) => {
     if (category) filter.category = category;
     if (status) filter.status = status;
     if (condition) filter.condition = condition;
-    if (minPoints || maxPoints) {
-      filter.points = {};
-      if (minPoints) filter.points.$gte = parseInt(minPoints);
-      if (maxPoints) filter.points.$lte = parseInt(maxPoints);
+    if (minPrice || maxPrice) {
+      filter.price = {};
+      if (minPrice) filter.price.$gte = parseInt(minPrice);
+      if (maxPrice) filter.price.$lte = parseInt(maxPrice);
     }
     if (search) {
       filter.$or = [
@@ -101,16 +101,25 @@ router.get('/items', async (req, res) => {
   }
 });
 
-// Get single item by ID
+// Simple in-memory cache for demo (resets on server restart)
+const itemViewCache = {};
 router.get('/items/:id', async (req, res) => {
   try {
     const { id } = req.params;
+    const userId = req.user ? req.user.id : null;
+    const uniqueKey = userId ? `user_${userId}` : `ip_${req.ip}`;
+    const cacheKey = `${id}_${uniqueKey}`;
+
+    // Only increment if not already viewed in this session
+    if (!itemViewCache[cacheKey]) {
+      await Item.findByIdAndUpdate(id, { $inc: { views: 1 } });
+      itemViewCache[cacheKey] = true;
+    }
+
     const item = await Item.findById(id).lean();
-    
     if (!item) {
       return res.status(404).json({ error: 'Item not found' });
     }
-    
     res.json({ data: item });
   } catch (err) {
     console.error('Error fetching item:', err);
@@ -197,26 +206,99 @@ router.get('/user/listed', protect, async (req, res) => {
   }
 });
 
-// Get user's bought products (items they swapped for)
-// Note: This would need a separate model for tracking swaps/transactions
-// For now, we'll return an empty array as placeholder
+// Get user's bought products (completed transactions)
 router.get('/user/bought', protect, async (req, res) => {
   try {
-    // TODO: Implement swap/transaction tracking
-    // For now, return empty array as placeholder
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+    
+    // Get completed transactions where user is the buyer
+    const transactions = await Transaction.find({ 
+      buyer: req.user.id,
+      status: 'completed'
+    })
+    .populate('item', 'title images price coinReward category condition size brand')
+    .populate('seller', 'name')
+    .sort({ createdAt: -1 })
+    .skip(skip)
+    .limit(limit);
+    
+    // Get total count
+    const totalItems = await Transaction.countDocuments({ 
+      buyer: req.user.id,
+      status: 'completed'
+    });
+    
+    const totalPages = Math.ceil(totalItems / limit);
+    
     res.json({
-      items: [],
+      items: transactions.map(t => ({
+        ...t.item.toObject(),
+        transactionId: t._id,
+        purchaseDate: t.createdAt,
+        amount: t.offerAmount,
+        seller: t.seller
+      })),
       pagination: {
-        currentPage: 1,
-        totalPages: 0,
-        totalItems: 0,
-        hasNextPage: false,
-        hasPrevPage: false
+        currentPage: page,
+        totalPages,
+        totalItems,
+        hasNextPage: page < totalPages,
+        hasPrevPage: page > 1
       }
     });
   } catch (err) {
     console.error('Error fetching user bought items:', err);
     res.status(500).json({ error: 'Failed to fetch bought items' });
+  }
+});
+
+// Get user's sold products (completed transactions where user is seller)
+router.get('/user/sold', protect, async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+    
+    // Get completed transactions where user is the seller
+    const transactions = await Transaction.find({ 
+      seller: req.user.id,
+      status: 'completed'
+    })
+    .populate('item', 'title images price coinReward category condition size brand')
+    .populate('buyer', 'name')
+    .sort({ createdAt: -1 })
+    .skip(skip)
+    .limit(limit);
+    
+    // Get total count
+    const totalItems = await Transaction.countDocuments({ 
+      seller: req.user.id,
+      status: 'completed'
+    });
+    
+    const totalPages = Math.ceil(totalItems / limit);
+    
+    res.json({
+      items: transactions.map(t => ({
+        ...t.item.toObject(),
+        transactionId: t._id,
+        saleDate: t.createdAt,
+        amount: t.offerAmount,
+        buyer: t.buyer
+      })),
+      pagination: {
+        currentPage: page,
+        totalPages,
+        totalItems,
+        hasNextPage: page < totalPages,
+        hasPrevPage: page > 1
+      }
+    });
+  } catch (err) {
+    console.error('Error fetching user sold items:', err);
+    res.status(500).json({ error: 'Failed to fetch sold items' });
   }
 });
 
@@ -235,12 +317,17 @@ router.post('/items/:id/buy', protect, async (req, res) => {
       return res.status(400).json({ error: 'You cannot buy your own item' });
     }
     
+    if (item.status !== 'approved') {
+      return res.status(400).json({ error: 'Item is not available for purchase' });
+    }
+    
     // Create transaction
     const transaction = new Transaction({
       item: id,
       buyer: req.user.id,
       seller: item.user,
-      offerAmount: item.points,
+      offerAmount: item.price,
+      coinReward: item.coinReward || 0,
       type: 'buy',
       message
     });
@@ -249,6 +336,19 @@ router.post('/items/:id/buy', protect, async (req, res) => {
     
     // Update item status to pending
     await Item.findByIdAndUpdate(id, { status: 'pending' });
+    
+    // Create notification for seller
+    const Notification = require('../models/Notification');
+    await Notification.create({
+      recipient: item.user,
+      sender: req.user.id,
+      type: 'buy_request',
+      title: 'Buy Request Received',
+      message: `${req.user.name} wants to buy your item "${item.title}" for ₹${item.price}.`,
+      relatedItem: id,
+      relatedTransaction: transaction._id,
+      actionRequired: 'deal'
+    });
     
     res.json({ 
       success: true, 
@@ -280,17 +380,35 @@ router.post('/items/:id/offer', protect, async (req, res) => {
       return res.status(400).json({ error: 'You cannot offer on your own item' });
     }
     
+    if (item.status !== 'approved') {
+      return res.status(400).json({ error: 'Item is not available for offers' });
+    }
+    
     // Create transaction
     const transaction = new Transaction({
       item: id,
       buyer: req.user.id,
       seller: item.user,
       offerAmount,
+      coinReward: item.coinReward || 0,
       type: 'offer',
       message
     });
     
     await transaction.save();
+    
+    // Create notification for seller
+    const Notification = require('../models/Notification');
+    await Notification.create({
+      recipient: item.user,
+      sender: req.user.id,
+      type: 'offer_made',
+      title: 'Offer Received',
+      message: `${req.user.name} made an offer of ₹${offerAmount} for your item "${item.title}".`,
+      relatedItem: id,
+      relatedTransaction: transaction._id,
+      actionRequired: 'deal'
+    });
     
     res.json({ 
       success: true, 
@@ -359,8 +477,29 @@ router.put('/transactions/:id/respond', protect, async (req, res) => {
     
     if (action === 'accept') {
       transaction.status = 'accepted';
+      
       // Update item status to sold
       await Item.findByIdAndUpdate(transaction.item, { status: 'sold' });
+      
+      // Award coins to the buyer if this is a buy transaction
+      if (transaction.type === 'buy' && transaction.coinReward > 0) {
+        const buyer = await User.findById(transaction.buyer);
+        if (buyer) {
+          buyer.coinBalance += transaction.coinReward;
+          await buyer.save();
+          
+          // Record the coin transaction
+          const CoinTransaction = require('../models/CoinTransaction');
+          await CoinTransaction.create({
+            user: transaction.buyer,
+            type: 'earned',
+            amount: transaction.coinReward,
+            description: `Earned coins from purchasing: ${transaction.item}`,
+            relatedTransaction: transaction._id,
+            balanceAfter: buyer.coinBalance
+          });
+        }
+      }
     } else if (action === 'reject') {
       transaction.status = 'rejected';
       // Reset item status to approved if it was pending

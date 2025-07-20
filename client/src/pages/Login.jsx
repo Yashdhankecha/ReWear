@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, Link, useSearchParams } from 'react-router-dom';
+import { useNavigate, Link, useSearchParams, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 
@@ -12,8 +12,11 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [searchParams] = useSearchParams();
 
+
+
   const { login, isAuthenticated, isLoading, error, clearError } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Handle Google OAuth callback
   useEffect(() => {
@@ -21,28 +24,40 @@ const Login = () => {
     const error = searchParams.get('error');
     
     if (token) {
-      // Store the token and redirect to dashboard
+      // Store the token and redirect to original page
       localStorage.setItem('token', token);
       toast.success('Google login successful!');
-      navigate('/dashboard');
+      // Redirect to the page they were trying to access, or dashboard as fallback
+      const from = location.state?.from?.pathname || '/dashboard';
+      navigate(from);
     } else if (error) {
       toast.error('Google login failed. Please try again.');
     }
   }, [searchParams, navigate]);
 
-  // Redirect if already authenticated (only after loading is complete)
-  useEffect(() => {
-    console.log('Login useEffect - isAuthenticated:', isAuthenticated, 'isLoading:', isLoading);
-    if (isAuthenticated && !isLoading) {
-      console.log('User already authenticated, redirecting to dashboard');
-      navigate('/dashboard');
-    }
-  }, [isAuthenticated, isLoading, navigate]);
+
 
   // Clear error when component mounts - only once
   useEffect(() => {
     clearError();
+    console.log('Login component mounted');
+    console.log('Current auth state:', { isAuthenticated, isLoading });
   }, []); // Empty dependency array - only run once
+
+  // Redirect if already authenticated (only after loading is complete)
+  useEffect(() => {
+    console.log('Login useEffect - isAuthenticated:', isAuthenticated, 'isLoading:', isLoading);
+    if (isAuthenticated && !isLoading) {
+      console.log('User already authenticated, redirecting to original page');
+      // Redirect based on user role
+      const userRole = (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('user'))?.role) || null;
+      if (userRole === 'admin' || userRole === 'owner') {
+        navigate('/admin/dashboard');
+      } else {
+        navigate('/dashboard');
+      }
+    }
+  }, [isAuthenticated, isLoading, navigate, location.state]);
 
   const handleChange = (e) => {
     setFormData({
@@ -67,12 +82,18 @@ const Login = () => {
     console.log('Login result:', result);
 
     if (result.success) {
-      console.log('Login successful, navigating to dashboard');
+      console.log('Login successful, navigating to original page');
       toast.success('Login successful!');
       // Add a small delay before navigation to ensure state is updated
       setTimeout(() => {
-        console.log('Executing navigation to dashboard');
-        navigate('/dashboard');
+        console.log('Executing navigation to original page');
+        // Redirect based on user role
+        const userRole = result.data?.data?.user?.role;
+        if (userRole === 'admin' || userRole === 'owner') {
+          navigate('/admin/dashboard');
+        } else {
+          navigate('/dashboard');
+        }
       }, 150);
     } else {
       console.log('Login failed:', result.error);
@@ -87,6 +108,8 @@ const Login = () => {
     const cleanBaseUrl = baseUrl.replace(/\/api$/, '');
     window.location.href = `${cleanBaseUrl}/api/auth/google`;
   };
+
+
 
   return (
     <div className="min-h-screen w-screen bg-slate-900 flex items-center justify-center p-8 relative overflow-hidden">
@@ -146,7 +169,7 @@ const Login = () => {
               </div>
             </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-3">
               <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
                 Email Address

@@ -349,7 +349,11 @@ const Profile = () => {
               ) : listedProducts.length > 0 ? (
                 <div className="grid md:grid-cols-2 gap-6">
                   {listedProducts.map((product) => (
-                    <div key={product._id} className="bg-slate-700/50 rounded-xl p-6 border border-slate-600 hover:border-slate-500 transition-colors">
+                    <div
+                      key={product._id}
+                      className="bg-slate-700/50 rounded-xl p-6 border border-slate-600 hover:border-blue-500 transition-colors cursor-pointer"
+                      onClick={() => navigate(`/edit/${product._id}`)}
+                    >
                       <div className="flex items-start gap-4">
                         <div className="w-16 h-16 rounded-lg bg-slate-600 flex items-center justify-center flex-shrink-0">
                           {product.images && product.images[0] ? (

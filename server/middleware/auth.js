@@ -11,6 +11,9 @@ const protect = async (req, res, next) => {
       token = req.headers.authorization.split(' ')[1];
     }
 
+    console.log('Auth middleware - URL:', req.url);
+    console.log('Auth middleware - Token provided:', !!token);
+
     if (!token) {
       return res.status(401).json({
         success: false,
@@ -56,7 +59,7 @@ const protect = async (req, res, next) => {
   }
 };
 
-// Check if user is admin
+// Check if user has required role
 const authorize = (...roles) => {
   return (req, res, next) => {
     if (!req.user) {

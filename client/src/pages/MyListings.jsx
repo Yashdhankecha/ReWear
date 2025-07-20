@@ -3,10 +3,19 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
 const MyListings = () => {
-  const { user } = useAuth();
+  const { user, isAuthenticated } = useAuth();
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+
+  // Role-based redirect: only 'user' role allowed
+  if (isAuthenticated && user?.role !== 'user') {
+    if (user?.role === 'admin') {
+      window.location.replace('/admin/dashboard');
+      return null;
+    }
+    return null;
+  }
 
   useEffect(() => {
     const fetchListings = async () => {
