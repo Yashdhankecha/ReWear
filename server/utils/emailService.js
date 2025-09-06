@@ -7,8 +7,8 @@ class EmailService {
       port: process.env.SMTP_PORT,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
       }
     });
   }
@@ -21,7 +21,7 @@ class EmailService {
     const html = this.getOTPEmailTemplate(otp, type);
 
     const mailOptions = {
-      from: `"ReWear" <${process.env.SMTP_USER}>`,
+      from: `"ReWear" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: subject,
       html: html
@@ -129,7 +129,7 @@ class EmailService {
 
   async sendWelcomeEmail(email, name) {
     const mailOptions = {
-      from: `"ReWear" <${process.env.SMTP_USER}>`,
+      from: `"ReWear" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: 'Welcome to ReWear!',
       html: this.getWelcomeEmailTemplate(name)
